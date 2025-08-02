@@ -55,7 +55,6 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
 }
 
 .nav-link:hover {
@@ -103,15 +102,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.75rem;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
 }
 
 .hamburger {
@@ -155,17 +146,6 @@
   bottom: 0;
 }
 
-/* Tablet styles */
-@media (max-width: 1024px) {
-  .nav-container {
-    padding: 0 1.5rem;
-  }
-  
-  .nav-links {
-    gap: 2rem;
-  }
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
   .nav-container {
@@ -182,14 +162,12 @@
     backdrop-filter: blur(10px);
     flex-direction: column;
     gap: 0;
-    padding: 1rem 0;
+    padding: 2rem 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
   }
   
   .nav-links-open {
@@ -203,25 +181,14 @@
     width: 100%;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    font-size: 1.1rem;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
   .nav-link:last-child {
     border-bottom: none;
   }
   
-  .nav-link::after {
-    display: none;
-  }
-  
   .nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
   
   .logo-text {
@@ -230,43 +197,5 @@
   
   .logo-subtitle {
     font-size: 0.7rem;
-  }
-}
-
-/* Small mobile styles */
-@media (max-width: 480px) {
-  .nav-container {
-    padding: 0 0.75rem;
-    height: 65px;
-  }
-  
-  .nav-links {
-    top: 65px;
-    max-height: calc(100vh - 65px);
-  }
-  
-  .nav-link {
-    padding: 1.25rem 1.5rem;
-    font-size: 1.05rem;
-  }
-  
-  .logo-text {
-    font-size: 1.4rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.65rem;
-  }
-  
-  .nav-toggle {
-    padding: 0.5rem;
-    min-width: 40px;
-    min-height: 40px;
-  }
-  
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after {
-    width: 20px;
   }
 } 
