@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Muslim Corporate Academy - Empowering Muslim students to pursue high-earning roles through Islamic principles. Academic excellence, professional development, and commercial awareness."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -26,7 +26,29 @@
     -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/fonts/WEB/css/satoshi.css" />
-    <title>React App</title>
+    <style>
+      /* Font loading optimization */
+      @font-face {
+        font-family: 'Satoshi-Variable';
+        src: url('/fonts/WEB/fonts/Satoshi-Variable.woff2') format('woff2');
+        font-display: swap;
+        font-weight: 300 900;
+      }
+      
+      /* Ensure consistent font rendering across environments */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-display: swap;
+      }
+      
+      /* Prevent font weight shifts during loading */
+      * {
+        font-display: swap;
+      }
+    </style>
+    <title>Muslim Corporate Academy - Empowering Students Through Islamic Principles</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

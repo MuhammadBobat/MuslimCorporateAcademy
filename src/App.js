@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Tuition from './components/Tuition';
 import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 import Mission from './components/Mission';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/tuition" element={<Tuition />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/mission" element={<Mission />} />
           </Routes>
         </main>
