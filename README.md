@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Muslim Corporate Academy (MCA)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
+[![React Router](https://img.shields.io/badge/React%20Router-7.6.3-green.svg)](https://reactrouter.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Available Scripts
+> **Empowering Muslim students to pursue high-earning roles through Islamic principles**
 
-In the project directory, you can run:
+## 🌟 About MCA
 
-### `npm start`
+The **Muslim Corporate Academy (MCA)** is a comprehensive platform designed to bridge the gap between Islamic values and corporate success. Founded by three Muslim brothers with a shared passion for faith and professional excellence, MCA addresses the unique challenges that Muslim students face in today's educational and professional landscape.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Our Mission
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We recognize that Muslims are severely disadvantaged when it comes to corporate applications and career advancement. Our mission is to:
 
-### `npm test`
+- **Empower Muslim students** to excel academically while maintaining their Islamic identity
+- **Provide guidance** for navigating corporate environments that may feel unfamiliar
+- **Bridge the gap** between Islamic values and professional success
+- **Inspire confidence** in the next generation of Muslim professionals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> *"Because success means little if it comes at the cost of who we are."*
 
-### `npm run build`
+## 🚀 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📚 Academic Excellence
+- **1:1 Online Tuition** for GCSE & A-Level students
+- **Expert Tutors** from top UK universities (UCL, Imperial, Cambridge, etc.)
+- **Subject Coverage**: Chemistry, Mathematics, Biology, Physics, Psychology, History
+- **Personalized Learning** tailored to individual goals and learning styles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 💼 Professional Development
+- **Mock Interviews** with detailed feedback
+- **CV Review** and optimization services
+- **Personal Statement** guidance and review
+- **Application Support** for corporate internships and roles
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📖 Commercial Awareness
+- **Weekly Blog** with industry insights and current affairs
+- **Islamic Perspective** on business and career topics
+- **Industry Coverage**: Finance, Law, Technology, Consulting, Data Science
+- **Free Resources** for interview preparation
 
-### `npm run eject`
+### 🎯 Core Values
+- **Tawakul & Qadr**: Islamic grounding in trust and divine decree
+- **Faith-Based Approach**: Maintaining Islamic principles in professional settings
+- **Community Focus**: Supporting the Muslim professional community
+- **Excellence**: Pursuing the highest standards in all endeavors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Technology Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend**: React 19.1.0 with modern hooks and functional components
+- **Routing**: React Router DOM 7.6.3 for seamless navigation
+- **Styling**: Custom CSS with responsive design and animations
+- **Fonts**: Satoshi font family for professional typography
+- **Assets**: Custom Islamic calligraphy and Arabic SVG graphics
+- **Build Tool**: Create React App with optimized production builds
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+MuslimCorporateAcademy/
+├── public/                 # Static assets
+│   ├── Fonts/             # Satoshi font family
+│   ├── arabic.svg         # Islamic calligraphy
+│   └── index.html         # Main HTML template
+├── src/
+│   ├── components/        # React components
+│   │   ├── Home.js        # Landing page with hero section
+│   │   ├── Tuition.js     # Academic services
+│   │   ├── Blog.js        # Weekly content
+│   │   ├── Mission.js     # Organization mission
+│   │   ├── Navigation.js  # Site navigation
+│   │   └── Footer.js      # Site footer
+│   ├── App.js             # Main application component
+│   └── index.js           # Application entry point
+└── package.json           # Dependencies and scripts
+```
 
-## Learn More
+## 🚀 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/MuhammadBobat/MuslimCorporateAcademy.git
+   cd MuslimCorporateAcademy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Making a Progressive Web App
+### Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### Advanced Configuration
+## 🎨 Design Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Responsive Design**: Mobile-first approach with seamless desktop experience
+- **Islamic Aesthetics**: Professional design incorporating Islamic calligraphy and cultural elements
+- **Smooth Animations**: Scroll-triggered animations and interactive elements
+- **Accessibility**: WCAG compliant with proper focus states and ARIA labels
+- **Performance**: Optimized loading and smooth user experience
 
-### Deployment
+## 📧 Contact & Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Email**: info@muslimcorporateacademy.com
+- **Tuition Sign-up**: [Google Forms](https://forms.gle/ELUfS3vcmmrE63Vk7)
+- **GitHub**: [@MuhammadBobat](https://github.com/MuhammadBobat)
 
-### `npm run build` fails to minify
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We welcome contributions from the community! Please feel free to:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Islamic Calligraphy**: Custom Arabic SVG designs
+- **Satoshi Font**: Professional typography by Fontshare
+- **React Community**: For the excellent development tools and ecosystem
+- **Our Students**: For inspiring us to create this platform
+
+---
+
+**"But above those ranking in knowledge is the One All-Knowing."** - Qur'an 12:76
+
+*Empowering the next generation of Muslim professionals, one student at a time.*
