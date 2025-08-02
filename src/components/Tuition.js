@@ -4,7 +4,7 @@ import './Tuition.css';
 const tutors = [
   {
     subject: 'Chemistry',
-    name: 'Sean "Diddy" Combs',
+    name: 'Hasan Ali',
     teaches: 'Chemistry',
     studying: 'BSc Chemistry, UCL',
     achieved: 'A*A*A* (A-levels)',
@@ -12,7 +12,7 @@ const tutors = [
   },
   {
     subject: 'Maths',
-    name: 'Jihadi John',
+    name: 'Muhammad Iqbal',
     teaches: 'Maths',
     studying: 'MEng Mathematics, Imperial',
     achieved: 'A*A*A* (A-levels)',
@@ -20,7 +20,7 @@ const tutors = [
   },
   {
     subject: 'Biology',
-    name: 'Jimmy Saville',
+    name: 'James Ward',
     teaches: 'Biology',
     studying: 'MBBS Medicine, KCL',
     achieved: 'A*A*A (A-levels)',
@@ -36,7 +36,7 @@ const tutors = [
   },
   {
     subject: 'Psychology',
-    name: 'Shiniqua',
+    name: 'Adam Aziz',
     teaches: 'Psychology',
     studying: 'BSc Psychology, Warwick',
     achieved: 'A*AA (A-levels)',
