@@ -1,0 +1,490 @@
+/* Tuition Hero */
+.tuition-hero {
+  padding: 8rem 0 4rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d5a2d 100%);
+  color: white;
+  text-align: center;
+}
+
+.tuition-hero .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.tuition-hero .hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+/* Subjects Section */
+.subjects {
+  padding: 6rem 0;
+  background: #fafafa;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.subject-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.subject-icon {
+  margin-bottom: 1.5rem;
+}
+
+.subject-emoji {
+  font-size: 3rem;
+  display: block;
+}
+
+.subject-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.subject-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Interview Prep Section */
+.interview-prep {
+  padding: 6rem 0;
+  background: white;
+}
+
+.interview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.interview-text {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease;
+}
+
+.interview-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.interview-icon {
+  width: 200px;
+  height: 200px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.interview-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.interview-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.interview-feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.interview-feature:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.interview-feature .feature-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Ensure SVGs are centered and sized well */
+.interview-feature .feature-icon svg {
+  display: block;
+  margin: auto;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.interview-feature span {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* Animation classes */
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+.tutor-slider-section {
+  background: #fff;
+  padding: 4rem 0 2rem 0;
+}
+
+.tutor-slider-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.tutor-slider-left {
+  flex: 1 1 45%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.2rem;
+}
+
+.slider-desc {
+  color: #444;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.tutor-slider-right {
+  flex: 1 1 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutor-slider-outer {
+  width: 100%;
+  max-width: 480px;
+  min-width: 350px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+.tutor-slider-inner {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  will-change: transform;
+}
+.tutor-slider-tile {
+  width: 100%;
+  min-width: 350px;
+  max-width: 480px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(44, 90, 44, 0.07);
+  padding: 2.2rem 2.5rem;
+  gap: 2.2rem;
+  transition: box-shadow 0.3s;
+  margin: 0 auto;
+}
+
+.tutor-slider-imgblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  margin-right: 1.2rem;
+}
+
+.tutor-slider-imgblock svg {
+  margin-bottom: 0.7rem;
+}
+
+.tutor-slider-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.tutor-slider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 1.05rem;
+  color: #2d5a2d;
+  font-weight: 500;
+}
+
+.tutor-slider-info b {
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+
+.ayah-quote {
+  font-style: italic;
+  color: #666;
+  font-size: 0.98em;
+}
+
+.subject-tile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 4.0rem;
+}
+
+/* Action Buttons below subject tiles */
+.tuition-action-buttons {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Distinct Tuition Action Button Style */
+.btn-tuition-action {
+  background: #2d5a2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(44, 90, 44, 0.07);
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+}
+.btn-tuition-action:hover, .btn-tuition-action:focus {
+  background: #1e3d1e;
+  color: #fff;
+}
+
+.subject-tile-btn {
+  background: #f8f9fa;
+  color: #2d5a2d;
+  border: 2px solid #b2d8b2;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 90, 44, 0.04);
+  outline: none;
+}
+
+.subject-tile-btn.selected,
+.subject-tile-btn:focus {
+  background: #2d5a2d;
+  color: #fff;
+  border-color: #2d5a2d;
+}
+
+.subject-tile-btn:hover {
+  background: #b2d8b2;
+  color: #1a1a1a;
+  border-color: #2d5a2d;
+}
+
+/* Section divider for topic change */
+.tuition-section-line {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background: #e5e5e5;
+  margin-top: 3.0rem;
+  margin-bottom: 0rem;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tutor-slider-layout {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .tutor-slider-right {
+    justify-content: center;
+  }
+  .tutor-slider-outer {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .tutor-slider-tile {
+    min-width: 220px;
+    max-width: 100%;
+    padding: 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tuition-hero .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .tuition-hero .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .interview-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .interview-text {
+    transform: translateY(30px);
+  }
+  
+  .interview-visual {
+    transform: translateY(30px);
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .subjects {
+    padding: 4rem 0;
+  }
+  
+  .interview-prep {
+    padding: 4rem 0;
+  }
+  .tutor-slider-section {
+    padding: 2.5rem 0 1.2rem 0;
+  }
+  .tutor-slider-tile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem 1.2rem;
+    min-width: 220px;
+    max-width: 100%;
+  }
+  .tutor-slider-imgblock {
+    margin-right: 0;
+    margin-bottom: 0.7rem;
+  }
+  .tutor-slider-info {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tuition-hero .hero-title {
+    font-size: 2rem;
+  }
+  
+  .tuition-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .subject-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .subject-emoji {
+    font-size: 2.5rem;
+  }
+  
+  .interview-features {
+    gap: 0.75rem;
+  }
+  
+  .interview-feature {
+    padding: 0.75rem;
+  }
+  .tutor-slider-section {
+    padding: 1.2rem 0 0.5rem 0;
+  }
+  .slider-title {
+    font-size: 1.1rem;
+  }
+  .slider-desc {
+    font-size: 0.95rem;
+  }
+  .tutor-slider-tile {
+    padding: 0.7rem 0.5rem;
+    min-width: 120px;
+  }
+  .subject-tile-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+} 
