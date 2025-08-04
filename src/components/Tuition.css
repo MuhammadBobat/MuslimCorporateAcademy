@@ -103,14 +103,27 @@
 }
 
 .interview-icon {
-  width: 200px;
-  height: 200px;
+  width: 480px;
+  height: 360px;
   background: #f8f9fa;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.interview-image {
+  width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.interview-image:hover {
+  transform: scale(1.05);
 }
 
 .interview-description {
@@ -415,6 +428,16 @@
     transform: translateY(30px);
   }
   
+  .interview-image {
+    width: 360px;
+    height: 260px;
+  }
+  
+  .interview-icon {
+    width: 400px;
+    height: 300px;
+  }
+  
   .container {
     padding: 0 1rem;
   }
@@ -486,5 +509,13 @@
   .subject-tile-btn {
     font-size: 0.95rem;
     padding: 0.5rem 0.8rem;
+  }
+  .interview-image {
+    width: 320px;
+    height: 240px;
+  }
+  .interview-icon {
+    width: 360px;
+    height: 260px;
   }
 } 

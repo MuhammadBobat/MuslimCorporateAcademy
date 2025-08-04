@@ -225,13 +225,7 @@ const Tuition = () => {
             </div>
             <div className="interview-visual animate-on-scroll">
               <div className="interview-icon">
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 12H16" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M8 16H12" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M3 7C3 5.89543 3.89543 5 5 5H19C20.1046 5 21 5.89543 21 7V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17V7Z" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M7 3L7 5" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M17 3L17 5" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                </svg>
+                <img src="/interview.jpeg" alt="Interview and Application Support" className="interview-image" />
               </div>
             </div>
           </div>

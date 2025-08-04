@@ -86,7 +86,12 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero" ref={heroRef}>
-        <div className="hero-background">
+        <div 
+          className="hero-background"
+          style={{
+            backgroundImage: `url('/frontpage.jpeg')`
+          }}
+        >
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
