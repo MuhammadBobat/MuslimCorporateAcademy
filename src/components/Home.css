@@ -50,7 +50,7 @@
   font-size: 2.1rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.2rem;
+  margin-bottom: 3.5rem;
   margin-top: 0;
   opacity: 0;
   transform: translateY(30px);
@@ -121,7 +121,7 @@
 }
 
 .home .hero-title {
-  margin-bottom: 0;
+  margin-bottom: 1.4rem;
   margin-top: 0;
 }
 
@@ -290,7 +290,7 @@
 
 .ayah-svg {
   width: 100%;
-  max-width: 480px;
+  max-width: 384px;
   height: auto;
   display: block;
   margin: 0.5rem auto 0.1rem auto;
@@ -310,8 +310,8 @@
 .ayah-translation {
   color: #e0e0e0;
   font-size: 1.1rem;
-  margin-top: 0.05rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.01rem;
+  margin-bottom: 0.8rem;
   text-align: center;
   font-style: italic;
   font-family: 'Inter', 'Amiri', serif;
@@ -341,7 +341,7 @@
     padding: 0.8rem 0 0.8rem 0;
   }
   .ayah-svg {
-    max-width: 78vw;
+    max-width: 62.4vw;
     margin: 0.3rem auto 0.05rem auto;
   }
   .ayah-translation {
@@ -414,6 +414,6 @@
     gap: 0.3rem;
   }
   .ayah-svg {
-    max-width: 95vw;
+    max-width: 76vw;
   }
 } 
