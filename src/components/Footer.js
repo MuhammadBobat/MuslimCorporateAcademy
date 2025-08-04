@@ -9,8 +9,13 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <span className="logo-text">MCA</span>
-              <span className="logo-subtitle">Muslim Corporate Academy</span>
+              <div className="logo-container">
+                <img src="/logo.svg" alt="MCA Logo" className="footer-logo-image" />
+                <div className="logo-text-container">
+                  <span className="logo-text">MCA</span>
+                  <span className="logo-subtitle">Muslim Corporate Academy</span>
+                </div>
+              </div>
             </div>
             <p className="footer-description">
               Empowering Muslims to enter high-earning roles through Islamic grounding and professional development.
@@ -59,11 +64,6 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <div className="footer-legal">
-            <a href="#" className="footer-link">Privacy Policy</a>
-            <a href="#" className="footer-link">Terms of Service</a>
-            <a href="#" className="footer-link">Cookie Policy</a>
-          </div>
           <div className="footer-copyright">
             <p>&copy; 2024 Muslim Corporate Academy. All rights reserved.</p>
           </div>

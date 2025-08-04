@@ -18,8 +18,13 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={closeMenu}>
-          <span className="logo-text">MCA</span>
-          <span className="logo-subtitle">Muslim Corporate Academy</span>
+          <div className="logo-container">
+            <img src="/logo.svg" alt="MCA Logo" className="nav-logo-image" />
+            <div className="logo-text-container">
+              <span className="logo-text">MCA</span>
+              <span className="logo-subtitle">Muslim Corporate Academy</span>
+            </div>
+          </div>
         </Link>
         
         <div className={`nav-links ${isMenuOpen ? 'nav-links-open' : ''}`}>
@@ -54,4 +59,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation; 
+export default Navigation;

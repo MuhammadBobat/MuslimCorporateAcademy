@@ -93,9 +93,9 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="blog-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">Weekly Commercial Awareness Blog</h1>
+          <h1 className="hero-title animate-on-scroll">Corporate Insight with an Islamic Ethos</h1>
           <p className="hero-subtitle animate-on-scroll">
-            Free, digestible content designed to help prepare for internship interviews and build commercial awareness
+          Weekly commercial awareness to support faith-aligned growth and strengthen applications
           </p>
           <div className="blog-stats animate-on-scroll">
             <div className="stat">
