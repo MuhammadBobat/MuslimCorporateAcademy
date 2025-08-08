@@ -70,13 +70,11 @@ const Home = () => {
   }, []);
 
   const renderFilledText = (text, fillCount, className) => {
-    // Robust mobile detection - multiple strategies for better device compatibility
     const isMobile = window.innerWidth <= 768 || 
                      window.matchMedia('(max-width: 768px)').matches ||
                      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (isMobile) {
-      // For mobile: split by words and handle wrapping properly
       const words = text.split(' ');
       let currentCharCount = 0;
       
@@ -101,7 +99,7 @@ const Home = () => {
               );
             });
             
-            currentCharCount += word.length + 1; // +1 for space
+            currentCharCount += word.length + 1;
             
             return (
               <span key={wordIndex} className="word-wrapper">
@@ -117,7 +115,6 @@ const Home = () => {
         </span>
       );
     } else {
-      // For desktop: use original character-by-character approach
       return (
         <span className={className}>
           {text.split('').map((char, i) => (

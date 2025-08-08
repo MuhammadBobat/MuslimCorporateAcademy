@@ -16,7 +16,6 @@ const Navigation = () => {
 
   const handleClick = (path) => {
     closeMenu();
-    // If we're already on the current page, scroll to top
     if (location.pathname === path) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }

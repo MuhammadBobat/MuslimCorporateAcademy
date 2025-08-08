@@ -335,7 +335,6 @@
   transition: color 0.2s;
 }
 
-/* Mobile character handling for text animation */
 @media (max-width: 768px) {
   .home .hero-title,
   .home .hero-subtitle {
@@ -344,34 +343,13 @@
     width: 100%;
   }
   
-  /* Word wrapper for mobile text animation */
   .home .hero-title .word-wrapper,
   .home .hero-subtitle .word-wrapper {
     display: inline-block;
     white-space: nowrap;
     margin-right: 0.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home .hero-title,
-  .home .hero-subtitle {
-    text-align: center;
-    max-width: 100%;
-    width: 100%;
   }
   
-  /* Word wrapper for mobile text animation */
-  .home .hero-title .word-wrapper,
-  .home .hero-subtitle .word-wrapper {
-    display: inline-block;
-    white-space: nowrap;
-    margin-right: 0.2rem;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
   .hero {
     padding: 0.8rem 0 0.8rem 0;
   }
@@ -390,7 +368,6 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    /* Mobile-specific text handling - works with character animation */
     display: block;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -404,7 +381,6 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    /* Mobile-specific text handling - works with character animation */
     display: block;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -475,7 +451,6 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    /* Mobile-specific text handling - works with character animation */
     display: block;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -489,7 +464,6 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    /* Mobile-specific text handling - works with character animation */
     display: block;
     overflow-wrap: break-word;
     word-break: break-word;
