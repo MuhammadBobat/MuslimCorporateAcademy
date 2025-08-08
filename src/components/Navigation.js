@@ -14,10 +14,18 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const handleClick = (path) => {
+    closeMenu();
+    // If we're already on the current page, scroll to top
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <Link to="/" className="nav-logo" onClick={closeMenu}>
+        <Link to="/" className="nav-logo" onClick={() => handleClick('/')}>
           <div className="logo-container">
             <img src="/logo.svg" alt="MCA Logo" className="nav-logo-image" />
             <div className="logo-text-container">
@@ -31,21 +39,21 @@ const Navigation = () => {
           <Link 
             to="/" 
             className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-            onClick={closeMenu}
+            onClick={() => handleClick('/')}
           >
             Home
           </Link>
           <Link 
             to="/tuition" 
             className={`nav-link ${location.pathname === '/tuition' ? 'active' : ''}`}
-            onClick={closeMenu}
+            onClick={() => handleClick('/tuition')}
           >
             Tuition
           </Link>
           <Link 
             to="/blog" 
             className={`nav-link ${location.pathname === '/blog' ? 'active' : ''}`}
-            onClick={closeMenu}
+            onClick={() => handleClick('/blog')}
           >
             Weekly Blog
           </Link>

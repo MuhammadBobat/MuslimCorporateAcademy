@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 const HERO_TITLE = 'Empowering students to pursue High-Earning Roles through Islamic Principles';
-const HERO_SUBTITLE = 'Through Islamic grounding in Tawakul and Qadr, we prepare you for success in the corporate world';
+const HERO_SUBTITLE = 'Through Islamic grounding in Tawakkul and Qadr, we prepare you for success in the corporate world';
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -69,18 +69,69 @@ const Home = () => {
     };
   }, []);
 
-  const renderFilledText = (text, fillCount, className) => (
-    <span className={className}>
-      {text.split('').map((char, i) => (
-        <span
-          key={i}
-          className={i < fillCount ? 'char-filled' : 'char-unfilled'}
-        >
-          {char === ' ' ? '\u00A0' : char}
+  const renderFilledText = (text, fillCount, className) => {
+    // Robust mobile detection - multiple strategies for better device compatibility
+    const isMobile = window.innerWidth <= 768 || 
+                     window.matchMedia('(max-width: 768px)').matches ||
+                     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // For mobile: split by words and handle wrapping properly
+      const words = text.split(' ');
+      let currentCharCount = 0;
+      
+      return (
+        <span className={className}>
+          {words.map((word, wordIndex) => {
+            const wordStartChar = currentCharCount;
+            const wordEndChar = currentCharCount + word.length;
+            const isWordVisible = wordEndChar <= fillCount;
+            
+            const wordChars = word.split('').map((char, charIndex) => {
+              const globalCharIndex = wordStartChar + charIndex;
+              const isCharVisible = globalCharIndex < fillCount;
+              
+              return (
+                <span
+                  key={`${wordIndex}-${charIndex}`}
+                  className={isCharVisible ? 'char-filled' : 'char-unfilled'}
+                >
+                  {char}
+                </span>
+              );
+            });
+            
+            currentCharCount += word.length + 1; // +1 for space
+            
+            return (
+              <span key={wordIndex} className="word-wrapper">
+                {wordChars}
+                {wordIndex < words.length - 1 && (
+                  <span className={wordEndChar < fillCount ? 'char-filled' : 'char-unfilled'}>
+                    {' '}
+                  </span>
+                )}
+              </span>
+            );
+          })}
         </span>
-      ))}
-    </span>
-  );
+      );
+    } else {
+      // For desktop: use original character-by-character approach
+      return (
+        <span className={className}>
+          {text.split('').map((char, i) => (
+            <span
+              key={i}
+              className={i < fillCount ? 'char-filled' : 'char-unfilled'}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          ))}
+        </span>
+      );
+    }
+  };
 
   return (
     <div className="home">
