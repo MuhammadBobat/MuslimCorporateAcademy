@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-const HERO_TITLE = 'Empowering students to pursue High-Earning Roles through Islamic Principles';
-const HERO_SUBTITLE = 'Through Islamic grounding in Tawakkul and Qadr, we prepare you for success in the corporate world';
+const HERO_TITLE = 'Empowering Students to Pursue Impactful Roles through Islamic Principles';
+const HERO_SUBTITLE = 'Grounded in Tawakkul and Qadr, we prepare you for success in the corporate world';
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -180,11 +180,7 @@ const Home = () => {
             </div>
             <div className="mission-visual animate-on-scroll">
               <div className="mission-icon">
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M2 17L12 22L22 17" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                  <path d="M2 12L12 17L22 12" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                </svg>
+                <img src="/mission.jpeg" alt="Our Mission" className="mission-image" />
               </div>
             </div>
           </div>
@@ -206,6 +202,9 @@ const Home = () => {
               </div>
               <h3>Academic Excellence</h3>
               <p>Comprehensive GCSE and A-Level tuition support across all major subjects with experienced tutors.</p>
+              <div className="feature-card-footer">
+                <Link to="/tuition" className="learn-more">Learn More →</Link>
+              </div>
             </div>
             <div className="feature-card animate-on-scroll">
               <div className="feature-icon">
@@ -216,6 +215,16 @@ const Home = () => {
               </div>
               <h3>Interview Preparation</h3>
               <p>Mock interviews and guidance for corporate role applications and internships.</p>
+              <div className="feature-card-footer">
+                <Link to="/tuition#interview" className="learn-more" onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('interview');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 100);
+                }}>Learn More →</Link>
+              </div>
             </div>
             <div className="feature-card animate-on-scroll">
               <div className="feature-icon">
@@ -228,6 +237,9 @@ const Home = () => {
               </div>
               <h3>Commercial Awareness</h3>
               <p>Weekly blog posts covering industry insights and current affairs.</p>
+              <div className="feature-card-footer">
+                <Link to="/blog" className="learn-more">Learn More →</Link>
+              </div>
             </div>
           </div>
         </div>

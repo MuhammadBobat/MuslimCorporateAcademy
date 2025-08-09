@@ -140,6 +140,7 @@
   height: 2px;
   background: #1a1a1a;
   transition: all 0.3s ease;
+  left: 0;
 }
 
 .hamburger::before {
@@ -148,6 +149,13 @@
 
 .hamburger::after {
   bottom: -8px;
+}
+
+/* Ensure all lines are perfectly aligned */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  transform-origin: center;
 }
 
 .hamburger-open {

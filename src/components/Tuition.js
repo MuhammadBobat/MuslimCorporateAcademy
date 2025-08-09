@@ -169,7 +169,7 @@ const Tuition = () => {
       </section>
 
       {/* Interview Prep Section (unchanged) */}
-      <section className="interview-prep">
+      <section id="interview" className="interview-prep">
         <div className="container">
           <div className="interview-content">
             <div className="interview-text animate-on-scroll">

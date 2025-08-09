@@ -18,7 +18,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="footer-description">
-            Empowering students to pursue High-Earning Roles through Islamic Principles.
+            Empowering Students to Pursue Impactful Roles through Islamic Principles
             </p>
           </div>
           
