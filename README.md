@@ -121,7 +121,7 @@ MuslimCorporateAcademy/
 
 ## 📧 Contact & Support
 
-- **Email**: info@muslimcorporateacademy.com
+- **Email**: info@muslimcorporateacademy.org
 - **Tuition Sign-up**: [Google Forms](https://forms.gle/ELUfS3vcmmrE63Vk7)
 - **GitHub**: [@MuhammadBobat](https://github.com/MuhammadBobat)
 

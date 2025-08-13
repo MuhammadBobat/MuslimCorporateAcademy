@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { addComment, getComments } from '../services/commentService';
+import emailService from '../services/emailService';
 import './BlogPost.css';
 
 // Sample blog content - you can easily replace this with real content
@@ -149,7 +150,26 @@ const BlogPost = () => {
     };
     
     loadComments();
-  }, [id]);
+    
+    // Automatically send newsletter when new blog post is viewed
+    // In a real scenario, this would trigger when you add new content
+    const sendNewsletterIfNew = async () => {
+      try {
+        // Check if this is a "new" post (you can modify this logic)
+        const isNewPost = post.date && new Date(post.date) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000); // Within last 7 days
+        
+        if (isNewPost) {
+          console.log('New blog post detected, sending newsletter...');
+          const result = await emailService.sendNewBlogNotification(post);
+          console.log('Newsletter result:', result);
+        }
+      } catch (error) {
+        console.error('Error sending newsletter:', error);
+      }
+    };
+    
+    sendNewsletterIfNew();
+  }, [id, post]);
 
   const handleSubmitComment = async (e) => {
     e.preventDefault();

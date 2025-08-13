@@ -238,6 +238,22 @@
   border-color: #2d5a2d;
 }
 
+.newsletter-success {
+  background: #f0f9f0;
+  border: 1px solid #2d5a2d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.newsletter-success p {
+  color: #2d5a2d;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+
+
 /* Animation classes */
 .animate-on-scroll.animate-in {
   opacity: 1;
@@ -291,6 +307,8 @@
     flex-direction: column;
     max-width: 100%;
   }
+  
+
   
   .container {
     padding: 0 1rem;

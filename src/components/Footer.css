@@ -77,10 +77,13 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .footer-link:hover {
   color: #2d5a2d;
+  text-decoration: underline;
 }
 
 .footer-contact {

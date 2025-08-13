@@ -159,7 +159,7 @@ const Tuition = () => {
           </button>
           <button 
             className="btn btn-tuition-action"
-            onClick={() => window.open('mailto:info@muslimcorporateacademy.com', '_blank')}
+                            onClick={() => window.open('mailto:info@muslimcorporateacademy.org', '_blank')}
           >
             Send us an Email
           </button>

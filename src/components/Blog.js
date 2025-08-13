@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import emailService from '../services/emailService';
 import './Blog.css';
 
 const Blog = () => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -24,6 +28,62 @@ const Blog = () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      // Use the email service to handle subscription
+      const result = await emailService.subscribe(email);
+      
+      setEmail('');
+      
+      console.log('Subscription successful:', result);
+      alert('Thank you for subscribing! You\'ll receive our weekly updates.');
+      
+    } catch (error) {
+      alert(error.message || 'There was an error. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Test function to send a newsletter (for testing purposes)
+  const testNewsletter = async () => {
+    try {
+      // First test the connection
+      console.log('Testing Mailjet connection...');
+      const connectionTest = await emailService.testMailjetConnection();
+      console.log('Connection test result:', connectionTest);
+      
+      if (!connectionTest.success) {
+        alert(`Connection test failed: ${connectionTest.message}\n\nCheck console for details.`);
+        return;
+      }
+      
+      // If connection works, try sending the newsletter
+      const testPost = {
+        id: 'test',
+        title: 'Test Newsletter - Islamic Finance Trends',
+        preview: 'This is a test newsletter to verify the email system is working correctly.',
+        date: new Date().toLocaleDateString()
+      };
+      
+      const result = await emailService.sendNewBlogNotification(testPost);
+      alert(`Test newsletter result: ${result.message}`);
+      console.log('Test newsletter result:', result);
+    } catch (error) {
+      alert(`Test newsletter error: ${error.message}`);
+      console.error('Test newsletter error:', error);
+    }
+  };
 
   const blogPosts = [
     {
@@ -97,20 +157,7 @@ const Blog = () => {
           <p className="hero-subtitle animate-on-scroll">
           Weekly commercial awareness to support faith-aligned growth and strengthen applications
           </p>
-          <div className="blog-stats animate-on-scroll">
-            <div className="stat">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Articles Published</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">1000+</span>
-              <span className="stat-label">Students Helped</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">6</span>
-              <span className="stat-label">Industries Covered</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -162,13 +209,48 @@ const Blog = () => {
             <p className="newsletter-description">
               Get our latest articles delivered to your inbox every week. No spam, just valuable insights.
             </p>
-            <div className="newsletter-form">
+            
+            <form onSubmit={handleSubscribe} className="newsletter-form">
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
                 className="newsletter-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
-              <button className="btn btn-primary">Subscribe</button>
+              <button 
+                type="submit" 
+                className="btn btn-primary"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Subscribing...' : 'Subscribe'}
+              </button>
+            </form>
+            
+            <p style={{marginTop: '1.5rem', color: '#888', fontStyle: 'italic', fontSize: '0.9rem'}}>
+              <small>Your email will be used solely for sending weekly blog updates. You can unsubscribe at any time.</small>
+            </p>
+            
+            {/* Test button - remove this after testing */}
+            <div style={{marginTop: '1rem', textAlign: 'center'}}>
+              <button 
+                onClick={testNewsletter}
+                style={{
+                  background: '#6c757d',
+                  color: 'white',
+                  border: 'none',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '4px',
+                  fontSize: '0.8rem',
+                  cursor: 'pointer'
+                }}
+              >
+                🧪 Test Newsletter System
+              </button>
+              <p style={{fontSize: '0.7rem', color: '#666', marginTop: '0.5rem'}}>
+                Click to test if emails are working (remove after testing)
+              </p>
             </div>
           </div>
         </div>

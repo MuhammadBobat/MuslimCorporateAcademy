@@ -10,6 +10,7 @@ import Mission from './components/Mission';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
+
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/mission" element={<Mission />} />
+
           </Routes>
         </main>
         <Footer />
