@@ -34,12 +34,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-title">Contact</h4>
             <div className="footer-contact">
-                        <a 
-                          href="mailto:info@muslimcorporateacademy.org?subject=Inquiry from Muslim Corporate Academy Website" 
-                          className="footer-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href="mailto:info@muslimcorporateacademy.org" className="footer-link">
                           info@muslimcorporateacademy.org
                         </a>
               <p className="footer-text">Available for inquiries</p>
