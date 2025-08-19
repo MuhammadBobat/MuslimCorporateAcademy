@@ -25,11 +25,21 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Invalid email address" });
     }
 
+    // Get credentials from environment variables
     const MAILCHIMP = {
-      DC: "us14",
-      LIST_ID: "52f386d464",
-      API_KEY: "a90e0447e84e2a0b55741172b6a4a3ee-us14"
+      DC: process.env.MAILCHIMP_DC || "us14",
+      LIST_ID: process.env.MAILCHIMP_LIST_ID,
+      API_KEY: process.env.MAILCHIMP_API_KEY
     };
+
+    // Validate environment variables
+    if (!MAILCHIMP.API_KEY || !MAILCHIMP.LIST_ID) {
+      console.error("Missing Mailchimp configuration");
+      return res.status(500).json({
+        success: false,
+        message: "Newsletter service is not properly configured"
+      });
+    }
 
     const url = `https://${MAILCHIMP.DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP.LIST_ID}/members`;
     const data = {
@@ -41,8 +51,6 @@ export default async function handler(req, res) {
       }
     };
 
-    console.log("Attempting to subscribe:", { email, url }); // Debug log
-
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -53,7 +61,6 @@ export default async function handler(req, res) {
     });
 
     const result = await response.json();
-    console.log("Mailchimp response:", { status: response.status, result }); // Debug log
 
     if (response.ok) {
       return res.status(200).json({
