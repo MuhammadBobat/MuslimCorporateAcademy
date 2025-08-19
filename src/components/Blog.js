@@ -55,35 +55,7 @@ const Blog = () => {
     }
   };
 
-  // Test function to send a newsletter (for testing purposes)
-  const testNewsletter = async () => {
-    try {
-      // First test the connection
-      console.log('Testing Mailjet connection...');
-      const connectionTest = await emailService.testMailjetConnection();
-      console.log('Connection test result:', connectionTest);
-      
-      if (!connectionTest.success) {
-        alert(`Connection test failed: ${connectionTest.message}\n\nCheck console for details.`);
-        return;
-      }
-      
-      // If connection works, try sending the newsletter
-      const testPost = {
-        id: 'test',
-        title: 'Test Newsletter - Islamic Finance Trends',
-        preview: 'This is a test newsletter to verify the email system is working correctly.',
-        date: new Date().toLocaleDateString()
-      };
-      
-      const result = await emailService.sendNewBlogNotification(testPost);
-      alert(`Test newsletter result: ${result.message}`);
-      console.log('Test newsletter result:', result);
-    } catch (error) {
-      alert(`Test newsletter error: ${error.message}`);
-      console.error('Test newsletter error:', error);
-    }
-  };
+
 
   const blogPosts = [
     {
@@ -232,26 +204,7 @@ const Blog = () => {
               <small>Your email will be used solely for sending weekly blog updates. You can unsubscribe at any time.</small>
             </p>
             
-            {/* Test button - remove this after testing */}
-            <div style={{marginTop: '1rem', textAlign: 'center'}}>
-              <button 
-                onClick={testNewsletter}
-                style={{
-                  background: '#6c757d',
-                  color: 'white',
-                  border: 'none',
-                  padding: '0.5rem 1rem',
-                  borderRadius: '4px',
-                  fontSize: '0.8rem',
-                  cursor: 'pointer'
-                }}
-              >
-                🧪 Test Newsletter System
-              </button>
-              <p style={{fontSize: '0.7rem', color: '#666', marginTop: '0.5rem'}}>
-                Click to test if emails are working (remove after testing)
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
