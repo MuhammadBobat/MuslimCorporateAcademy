@@ -21,19 +21,19 @@ class EmailService {
 
       const result = await response.json();
 
-      if (response.ok) {
-        return {
-          success: true,
-          message: result.message,
-          email: email
-        };
-      } else {
-        throw new Error(result.error || "Failed to subscribe");
+      if (!response.ok) {
+        throw new Error(result.error || result.message || "Failed to subscribe");
       }
+
+      return {
+        success: true,
+        message: result.message,
+        email: email
+      };
 
     } catch (error) {
       console.error("Subscription error:", error);
-      throw error;
+      throw new Error(error.message || "Failed to subscribe. Please try again later.");
     }
   }
 
