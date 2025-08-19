@@ -190,7 +190,7 @@ const Tuition = () => {
                       <circle cx="12" cy="12" r="2" fill="#2d5a2d"/>
                     </svg>
                   </div>
-                  <span>Mock Interviews and Feedback</span>
+                  <span>CV Review</span>
                 </div>
                 <div className="interview-feature">
                   <div className="feature-icon">
@@ -213,7 +213,7 @@ const Tuition = () => {
                       <path d="M3 12h18" stroke="#2d5a2d" strokeWidth="1.5"/>
                     </svg>
                   </div>
-                  <span>CV Review</span>
+                  <span>Mock Interviews and Feedback (Coming Soon)</span>
                 </div>
               </div>
               <button 
