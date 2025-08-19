@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     const MAILCHIMP = {
       DC: "us14",
       LIST_ID: "52f386d464",
-      API_KEY: "944e7c66f7c636593d91c7164c107a87-us14"
+      API_KEY: "a90e0447e84e2a0b55741172b6a4a3ee-us14"
     };
 
     const url = `https://${MAILCHIMP.DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP.LIST_ID}/members`;
@@ -41,6 +41,8 @@ export default async function handler(req, res) {
       }
     };
 
+    console.log("Attempting to subscribe:", { email, url }); // Debug log
+
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -51,6 +53,7 @@ export default async function handler(req, res) {
     });
 
     const result = await response.json();
+    console.log("Mailchimp response:", { status: response.status, result }); // Debug log
 
     if (response.ok) {
       return res.status(200).json({
@@ -63,12 +66,20 @@ export default async function handler(req, res) {
         message: "You are already subscribed to our newsletter"
       });
     } else {
-      console.error("Mailchimp error:", result);
+      console.error("Mailchimp error:", { 
+        status: response.status,
+        result,
+        email 
+      });
       throw new Error(result.detail || "Failed to subscribe");
     }
 
   } catch (error) {
-    console.error("Subscription error:", error);
+    console.error("Subscription error:", {
+      message: error.message,
+      stack: error.stack,
+      email: req.body?.email
+    });
     return res.status(500).json({
       success: false,
       message: "Failed to subscribe. Please try again later.",
