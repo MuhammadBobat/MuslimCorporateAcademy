@@ -158,7 +158,7 @@ const Home = () => {
             {renderFilledText(HERO_SUBTITLE, subtitleFillCount, 'hero-fill-letters')}
           </p>
           <div className="hero-buttons animate-on-scroll">
-            <Link to="/tuition" className="btn btn-primary">Explore Tuition</Link>
+            <Link to="/mission" className="btn btn-primary">What is MCA?</Link>
             <Link to="/blog" className="btn btn-secondary">Read Our Blog</Link>
           </div>
         </div>

@@ -4,25 +4,25 @@ import './Tuition.css';
 const tutors = [
   {
     subject: 'Chemistry',
-    name: 'Hasan Ali',
+    name: 'Ibrahim Jamal',
     teaches: 'Chemistry',
-    studying: 'BSc Chemistry, UCL',
+    studying: 'MB Medicine, Cambridge',
     achieved: 'A*A*A* (A-levels)',
     ayah: 'Indeed, Allah is with the patient. (2:153)'
   },
   {
     subject: 'Maths',
-    name: 'Muhammad Iqbal',
+    name: 'Muhammad Bobat',
     teaches: 'Maths',
-    studying: 'MEng Mathematics, Imperial',
+    studying: 'BSc Computer Science, University of Manchester',
     achieved: 'A*A*A* (A-levels)',
     ayah: 'And He found you lost and guided [you]. (93:7)'
   },
   {
     subject: 'Biology',
-    name: 'James Ward',
+    name: 'Burhan Khan',
     teaches: 'Biology',
-    studying: 'MBBS Medicine, KCL',
+    studying: 'BDS Dentistry, University of Manchester',
     achieved: 'A*A*A (A-levels)',
     ayah: 'And say: My Lord, increase me in knowledge. (20:114)'
   },
@@ -36,9 +36,9 @@ const tutors = [
   },
   {
     subject: 'Psychology',
-    name: 'Adam Aziz',
+    name: 'Muhammad Jama',
     teaches: 'Psychology',
-    studying: 'BSc Psychology, Warwick',
+    studying: 'LLB Law, University of Manchester',
     achieved: 'A*AA (A-levels)',
     ayah: 'Verily, with hardship comes ease. (94:6)'
   },
