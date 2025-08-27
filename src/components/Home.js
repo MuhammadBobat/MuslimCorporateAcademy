@@ -164,29 +164,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="mission">
-        <div className="container">
-          <div className="mission-content">
-            <div className="mission-text animate-on-scroll">
-              <h2 className="section-title">Our Mission</h2>
-              <p className="mission-description">
-              At The Muslim Corporate Academy, our mission is simple yet powerful: to help Muslims thrive in the corporate world without compromising their Islamic values.
-              </p>
-              <p className="mission-description">
-              <em>Because success means little if it comes at the cost of who we are.</em>
-              </p>
-              <Link to="/mission" className="btn btn-primary">Learn More</Link>
-            </div>
-            <div className="mission-visual animate-on-scroll">
-              <div className="mission-icon">
-                <img src="/mission.jpeg" alt="Our Mission" className="mission-image" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="features">
         <div className="container">
@@ -239,6 +216,29 @@ const Home = () => {
               <p>Weekly blog posts covering industry insights and current affairs.</p>
               <div className="feature-card-footer">
                 <Link to="/blog" className="learn-more">Learn More →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="mission">
+        <div className="container">
+          <div className="mission-content">
+            <div className="mission-text animate-on-scroll">
+              <h2 className="section-title">Our Mission</h2>
+              <p className="mission-description">
+              At The Muslim Corporate Academy, our mission is simple yet powerful: to help Muslims thrive in the corporate world without compromising their Islamic values.
+              </p>
+              <p className="mission-description">
+              <em>Because success means little if it comes at the cost of who we are.</em>
+              </p>
+              <Link to="/mission" className="btn btn-primary">Learn More</Link>
+            </div>
+            <div className="mission-visual animate-on-scroll">
+              <div className="mission-icon">
+                <img src="/mission.jpeg" alt="Our Mission" className="mission-image" />
               </div>
             </div>
           </div>
