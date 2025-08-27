@@ -27,9 +27,9 @@ const Ethos = () => {
   return (
     <div className="ethos">
       <section className="ethos-hero">
-        <div className="container">
-          <h1 className="hero-title animate-on-scroll">Our Islamic Ethos</h1>
-          <p className="hero-subtitle animate-on-scroll">
+        <div className="ethos-container">
+          <h1 className="ethos-page-title animate-on-scroll">Our Islamic Ethos</h1>
+          <p className="ethos-page-subtitle animate-on-scroll">
             Grounding our educational approach in timeless Islamic principles
           </p>
         </div>
@@ -88,7 +88,7 @@ const Ethos = () => {
       </section>
 
       <section className="mission-integration">
-        <div className="container">
+        <div className="ethos-container">
           <div className="integration-content">
             <div className="integration-text animate-on-scroll">
               <h2>How Our Values Shape Education</h2>

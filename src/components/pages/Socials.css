@@ -1,5 +1,5 @@
-.socials {
-  padding-top: 80px;
+.socials-page {
+  padding-top: 0;
 }
 
 .socials-hero {
@@ -7,9 +7,11 @@
   color: white;
   padding: 6rem 0;
   text-align: center;
+  margin-top: -80px;
+  padding-top: calc(6rem + 80px);
 }
 
-.hero-title {
+.socials-hero-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -18,7 +20,7 @@
   transition: all 0.8s ease;
 }
 
-.hero-subtitle {
+.socials-hero-subtitle {
   font-size: 1.2rem;
   opacity: 0.9;
   max-width: 600px;
@@ -28,7 +30,7 @@
   transition: all 0.8s ease 0.2s;
 }
 
-.social-links {
+.social-media-section {
   padding: 6rem 0;
   background: white;
 }
@@ -47,7 +49,7 @@
   gap: 2.5rem;
 }
 
-.social-card {
+.social-platform-card {
   text-align: center;
   padding: 2.5rem 2rem;
   background: #f8f9fa;
@@ -57,12 +59,12 @@
   transform: translateY(30px);
 }
 
-.social-card:hover {
+.social-platform-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.social-icon {
+.platform-icon {
   margin-bottom: 1.5rem;
 }
 
@@ -71,20 +73,20 @@
   margin: 0 auto;
 }
 
-.social-card h3 {
+.social-platform-card h3 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #2d5a2d;
   margin-bottom: 1rem;
 }
 
-.social-card p {
+.social-platform-card p {
   color: #666;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.social-placeholder {
+.username-display {
   background: #2d5a2d;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -127,7 +129,7 @@
   display: block;
 }
 
-.container {
+.socials-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -151,7 +153,7 @@
     font-size: 1.1rem;
   }
   
-  .social-links,
+  .social-media-section,
   .tiktok-section {
     padding: 4rem 0;
   }
@@ -161,7 +163,7 @@
     gap: 2rem;
   }
   
-  .container {
+  .socials-container {
     padding: 0 1rem;
   }
 }

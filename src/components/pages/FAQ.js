@@ -37,11 +37,11 @@ const FAQ = () => {
     },
     {
       question: "Do you offer online tutoring?",
-      answer: "Yes, we offer both in-person and online tutoring sessions to accommodate different learning preferences and schedules. Our online platform provides the same quality of education as our in-person sessions."
+      answer: "Yes, we offer online tutoring sessions to accommodate different learning preferences and schedules. Our tutors are highly experienced in both in-person and online teaching, and they know how to make online sessions just as effective, if not more so than in-person lessons."
     },
     {
       question: "What subjects do you cover?",
-      answer: "We cover all major GCSE and A-Level subjects including Mathematics, Sciences, English, Business Studies, Economics, and more. We also provide specialized support for university applications and personal statements."
+      answer: "We cover all major GCSE and A-Level subjects including Mathematics, Sciences, English, Politics, Psychology, and more. We also provide specialised support for university applications and personal statements."
     },
     {
       question: "How do you incorporate Islamic values into your teaching?",
@@ -61,8 +61,8 @@ const FAQ = () => {
     <div className="faq">
       <section className="faq-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">Frequently Asked Questions</h1>
-          <p className="hero-subtitle animate-on-scroll">
+          <h1 className="faq-hero-title animate-on-scroll">Frequently Asked Questions</h1>
+          <p className="faq-hero-subtitle animate-on-scroll">
             Find answers to common questions about our services and academy
           </p>
         </div>

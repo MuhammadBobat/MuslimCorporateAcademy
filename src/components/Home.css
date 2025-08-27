@@ -373,7 +373,7 @@
   .home .hero-title,
   .home .hero-subtitle {
     text-align: center;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
   }
   
@@ -398,7 +398,7 @@
     font-size: 1.22rem !important;
     line-height: 1.3;
     padding: 0 0.5rem;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -411,7 +411,7 @@
     font-size: 0.75rem !important;
     line-height: 1.4;
     padding: 0 0.5rem;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -423,6 +423,8 @@
   .hero-content {
     padding: 0 1rem;
     gap: 0.5rem;
+    max-width: 800px;
+    width: 100%;
   }
   .hero-buttons {
     flex-direction: column;
@@ -491,7 +493,7 @@
     font-size: 1.20rem !important;
     line-height: 1.3;
     padding: 0 0.5rem;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -504,7 +506,7 @@
     font-size: 1.01rem !important;
     line-height: 1.4;
     padding: 0 0.5rem;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -526,6 +528,8 @@
   .hero-content {
     gap: 0.3rem;
     padding: 0 0.8rem;
+    max-width: 800px;
+    width: 100%;
   }
   .ayah-svg {
     max-width: 76vw;

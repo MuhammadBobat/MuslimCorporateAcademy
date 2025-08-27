@@ -28,9 +28,9 @@ const Mentors = () => {
     <div className="mentors">
       {/* Hero Section */}
       <section className="mentors-hero">
-        <div className="container">
-          <h1 className="hero-title animate-on-scroll">Our Mentors</h1>
-          <p className="hero-subtitle animate-on-scroll">
+        <div className="mentors-container">
+          <h1 className="mentors-page-title animate-on-scroll">Our Mentors</h1>
+          <p className="mentors-page-subtitle animate-on-scroll">
             Meet the experienced professionals guiding our students towards success
           </p>
         </div>
@@ -38,7 +38,7 @@ const Mentors = () => {
 
       {/* Mentors Grid */}
       <section className="mentors-content">
-        <div className="container">
+        <div className="mentors-container">
           <div className="mentors-grid">
             {/* Placeholder for mentor cards */}
             <div className="mentor-card animate-on-scroll">

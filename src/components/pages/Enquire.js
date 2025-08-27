@@ -28,8 +28,8 @@ const Enquire = () => {
     <div className="enquire">
       <section className="enquire-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">Get In Touch</h1>
-          <p className="hero-subtitle animate-on-scroll">
+          <h1 className="enquire-hero-title animate-on-scroll">Get In Touch</h1>
+          <p className="enquire-hero-subtitle animate-on-scroll">
             Have questions? We are here to help you on your journey
           </p>
         </div>

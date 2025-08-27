@@ -27,22 +27,24 @@ const PersonalStatement = () => {
   return (
     <div className="personal-statement">
       <section className="ps-hero">
-        <div className="container">
-          <h1 className="hero-title animate-on-scroll">Personal Statement Support</h1>
-          <p className="hero-subtitle animate-on-scroll">
+        <div className="ps-container">
+          <h1 className="ps-hero-title animate-on-scroll">Personal Statement Support</h1>
+          <p className="ps-hero-subtitle animate-on-scroll">
             Craft compelling personal statements that showcase your unique journey and Islamic values
           </p>
         </div>
       </section>
 
       <section className="ps-services">
-        <div className="container">
+        <div className="ps-container">
           <h2 className="section-title animate-on-scroll">Our Services</h2>
           
           <div className="services-grid">
             <div className="service-card animate-on-scroll">
               <div className="service-icon">
-                <div className="icon-placeholder">✍️</div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="#2d5a2d"/>
+                </svg>
               </div>
               <h3>Statement Review</h3>
               <p>
@@ -53,7 +55,9 @@ const PersonalStatement = () => {
 
             <div className="service-card animate-on-scroll">
               <div className="service-icon">
-                <div className="icon-placeholder">🎯</div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#2d5a2d"/>
+                </svg>
               </div>
               <h3>Content Development</h3>
               <p>
@@ -64,7 +68,9 @@ const PersonalStatement = () => {
 
             <div className="service-card animate-on-scroll">
               <div className="service-icon">
-                <div className="icon-placeholder">📚</div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#2d5a2d"/>
+                </svg>
               </div>
               <h3>Subject-Specific Guidance</h3>
               <p>
@@ -77,7 +83,7 @@ const PersonalStatement = () => {
       </section>
 
       <section className="ps-process">
-        <div className="container">
+        <div className="ps-container">
           <div className="process-content">
             <div className="process-text animate-on-scroll">
               <h2>Our Process</h2>

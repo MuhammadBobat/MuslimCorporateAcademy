@@ -28,8 +28,8 @@ const GetInvolved = () => {
     <div className="get-involved">
       <section className="involved-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">Get Involved</h1>
-          <p className="hero-subtitle animate-on-scroll">
+          <h1 className="involved-hero-title animate-on-scroll">Get Involved</h1>
+          <p className="involved-hero-subtitle animate-on-scroll">
             Join our mission to empower Muslim students in the corporate world
           </p>
         </div>

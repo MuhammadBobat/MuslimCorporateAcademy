@@ -28,8 +28,8 @@ const CVSupport = () => {
     <div className="cv-support">
       <section className="cv-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">CV and Application Support</h1>
-          <p className="hero-subtitle animate-on-scroll">
+          <h1 className="cv-hero-title animate-on-scroll">CV and Application Support</h1>
+          <p className="cv-hero-subtitle animate-on-scroll">
             Professional guidance for your career applications and development
           </p>
         </div>

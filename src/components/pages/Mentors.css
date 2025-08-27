@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.hero-title {
+.mentors-page-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -19,7 +19,7 @@
   transition: all 0.8s ease;
 }
 
-.hero-subtitle {
+.mentors-page-subtitle {
   font-size: 1.2rem;
   opacity: 0.9;
   max-width: 600px;
@@ -34,7 +34,7 @@
   background: #fafafa;
 }
 
-.container {
+.mentors-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -42,9 +42,12 @@
 
 .mentors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin-top: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mentor-card {
@@ -63,12 +66,14 @@
 }
 
 .mentor-image-placeholder {
-  height: 250px;
+  height: 320px;
+  width: 100%;
   background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 .placeholder-text {
@@ -127,9 +132,10 @@
   .mentors-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 100%;
   }
   
-  .container {
+  .mentors-container {
     padding: 0 1rem;
   }
 }

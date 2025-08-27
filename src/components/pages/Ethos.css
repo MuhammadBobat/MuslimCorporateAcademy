@@ -1,5 +1,5 @@
 .ethos {
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .ethos-hero {
@@ -7,9 +7,11 @@
   color: white;
   padding: 6rem 0;
   text-align: center;
+  margin-top: -80px;
+  padding-top: calc(6rem + 80px);
 }
 
-.hero-title {
+.ethos-page-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -18,7 +20,7 @@
   transition: all 0.8s ease;
 }
 
-.hero-subtitle {
+.ethos-page-subtitle {
   font-size: 1.2rem;
   opacity: 0.9;
   max-width: 600px;
@@ -125,7 +127,7 @@
   font-weight: 500;
 }
 
-.container {
+.ethos-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -164,7 +166,7 @@
     gap: 2rem;
   }
   
-  .container {
+  .ethos-container {
     padding: 0 1rem;
   }
 }
