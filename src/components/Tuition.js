@@ -7,7 +7,7 @@ const tutors = [
     name: 'Ibrahim Jamal',
     teaches: 'Chemistry',
     studying: 'MB Medicine, Cambridge',
-    achieved: 'A*A*A* (A-levels)',
+    achieved: '5 A* (A-levels)',
     ayah: 'Indeed, Allah is with the patient. (2:153)'
   },
   {
@@ -15,7 +15,7 @@ const tutors = [
     name: 'Muhammad Bobat',
     teaches: 'Maths',
     studying: 'BSc Computer Science, University of Manchester',
-    achieved: 'A*A*A* (A-levels)',
+    achieved: 'A*A*A*A* (A-levels)',
     ayah: 'And He found you lost and guided [you]. (93:7)'
   },
   {
@@ -39,7 +39,7 @@ const tutors = [
     name: 'Muhammad Jama',
     teaches: 'Psychology',
     studying: 'LLB Law, University of Manchester',
-    achieved: 'A*AA (A-levels)',
+    achieved: 'A* in Psychology (A-levels)',
     ayah: 'Verily, with hardship comes ease. (94:6)'
   },
   {
