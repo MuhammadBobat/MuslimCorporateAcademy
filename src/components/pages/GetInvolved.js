@@ -93,7 +93,7 @@ const GetInvolved = () => {
               </p>
               <div className="contact-info">
                 <p><strong>Email:</strong> info@muslimcorporateacademy.org</p>
-                <p><strong>Subject:</strong> Get Involved Inquiry</p>
+                <p><strong>Subject:</strong> Get Involved Enquiry</p>
               </div>
             </div>
             <div className="contact-visual animate-on-scroll">
