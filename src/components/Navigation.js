@@ -4,14 +4,24 @@ import "./Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setOpenDropdown(null);
+    }
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setOpenDropdown(null);
+  };
+
+  const toggleDropdown = (index) => {
+    console.log('Toggling dropdown:', index, 'Current open:', openDropdown);
+    setOpenDropdown(openDropdown === index ? null : index);
   };
 
   const handleClick = (path) => {
@@ -69,10 +79,28 @@ const Navigation = () => {
         </Link>
 
         <div className={`nav-links ${isMenuOpen ? "nav-links-open" : ""}`}>
+          <Link to="/" className="nav-home-link" onClick={() => handleClick("/")}>
+            Home
+          </Link>
           {navItems.map((item, index) => (
             <div key={index} className="nav-item">
-              <span className="nav-link">{item.title}</span>
-              <div className="dropdown-menu">
+              <div className="nav-link-container" onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleDropdown(index);
+              }}>
+                <span className="nav-link">{item.title}</span>
+                <svg 
+                  className={`dropdown-arrow mobile-only ${openDropdown === index ? "arrow-open" : ""}`}
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 24 24" 
+                  fill="none"
+                >
+                  <path d="M7 10l5 5 5-5" stroke="#2d5a2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className={`dropdown-menu ${openDropdown === index ? "dropdown-open" : ""}`}>
                 {item.items.map((subItem, subIndex) => (
                   <Link
                     key={subIndex}

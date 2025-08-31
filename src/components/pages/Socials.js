@@ -86,13 +86,18 @@ const Socials = () => {
         <div className="socials-container">
           <h2 className="section-title animate-on-scroll">Latest TikTok Content</h2>
           <div className="tiktok-container animate-on-scroll">
-            <div className="tiktok-placeholder">
-              <div className="placeholder-text">
-                TikTok Video Integration
-                <br />
-                <small>Video will be embedded here</small>
-              </div>
-            </div>
+            <video 
+              className="tiktok-video"
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              controls
+            >
+              <source src="/tiktok.MOV" type="video/quicktime" />
+              <source src="/tiktok.MOV" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>

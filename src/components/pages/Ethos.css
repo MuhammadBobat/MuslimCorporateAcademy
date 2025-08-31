@@ -5,10 +5,10 @@
 .ethos-hero {
   background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
   color: white;
-  padding: 6rem 0;
+  padding: 4rem 0 8rem 0;
   text-align: center;
   margin-top: -80px;
-  padding-top: calc(6rem + 80px);
+  padding-top: calc(4rem + 80px);
 }
 
 .ethos-page-title {
