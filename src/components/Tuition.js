@@ -74,6 +74,86 @@ const Tuition = () => {
     };
   }, []);
 
+  // Career Convos title typing animation
+  useEffect(() => {
+    const text = "Here's how we are different… Introducing Career Convos";
+    const typingElement = document.getElementById('career-convos-title');
+    
+    if (!typingElement) return;
+
+    let index = 0;
+    const typeSpeed = 70; // milliseconds per character
+
+    const typeText = () => {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, typeSpeed);
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(typeText, 100); // Start typing sooner when section is visible
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const section = document.querySelector('.career-convos');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
+  // Career Convos subtitle typing animation
+  useEffect(() => {
+    const text = "Linking your conventional education to real-world success";
+    const typingElement = document.getElementById('career-convos-subtitle');
+    
+    if (!typingElement) return;
+
+    let index = 0;
+    const typeSpeed = 55; // slightly faster for subtitle
+
+    const typeText = () => {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, typeSpeed);
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(typeText, 1300); // Start subtitle typing sooner
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const section = document.querySelector('.career-convos');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
+
+
   const [selected, setSelected] = useState(0);
   const sliderRef = useRef();
 
@@ -137,35 +217,94 @@ const Tuition = () => {
             </div>
           </div>
         </div>
+        
         {/* Subject Tiles */}
-        <div className="container subject-tile-row">
-          {subjects.map((subject, idx) => (
-            <button
-              key={subject}
-              className={`subject-tile-btn${selected === idx ? ' selected' : ''}`}
-              onClick={() => setSelected(idx)}
+        <div className="container">
+          <div className="subject-tiles-container">
+            {subjects.map((subject, idx) => (
+              <button
+                key={subject}
+                className={`subject-tile-btn${selected === idx ? ' selected' : ''}`}
+                onClick={() => setSelected(idx)}
+              >
+                {subject}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Career Convos Section */}
+      <section className="career-convos">
+        <div className="container">
+          {/* Title Section */}
+          <div className="career-convos-header animate-on-scroll">
+            <h2 className="section-title">
+              <span className="typing-text" id="career-convos-title"></span>
+              <span className="cursor">|</span>
+            </h2>
+            <h3 className="career-convos-subtitle" style={{ color: '#2d5a2d', marginBottom: '40px' }}>
+              <span className="typing-subtitle-text" id="career-convos-subtitle" style={{ color: '#2d5a2d' }}></span>
+              <span className="cursor">|</span>
+            </h3>
+          </div>
+
+          {/* First Content Block - Text Left, Image Right */}
+          <div className="mission-content">
+            <div className="mission-text animate-on-scroll">
+              <div className="mission-description">
+                <p>
+                At MCA, we believe tutoring should be more than lesson plans, practice questions, and an hour that ends as quickly as it begins. Our tutors are mentors who build genuine relationships with students, offering guidance that extends far beyond the classroom.
+                </p>
+                <p>
+                Through <b>Career Convos</b>, every tuition session includes dedicated time to explore your career aspirations. Each student is paired with a mentor who is already pursuing, or has achieved, success in that very field. This means your academic learning is always linked to real-world opportunities and future goals.
+                </p>
+              </div>
+            </div>
+            <div className="mission-visual animate-on-scroll">
+              <div className="mission-icon">
+                <img src="/mission.jpeg" alt="Career Convos" className="mission-image" />
+              </div>
+            </div>
+          </div>
+
+          {/* Second Content Block - Image Left, Text Right */}
+          <div className="mission-content second-block">
+            <div className="mission-visual animate-on-scroll">
+              <div className="mission-icon">
+                <img src="/interview.jpeg" alt="Career Convos" className="mission-image" />
+              </div>
+            </div>
+            <div className="mission-text animate-on-scroll">
+              <div className="mission-description">
+                <p>
+                Our approach combines rigorous academic support with Islamic principles and personal growth. We don’t just prepare you for exams, we prepare you for the corporate and professional world. By instilling values of excellence, integrity, and purpose, we align your faith with your career ambitions.
+                </p>
+                <p>
+                Whether you're aiming for Computer Science, Law, Engineering, Finance, or any other competitive field, <b>Career Convos</b> ensures that every lesson is not just about mastering content, but about connecting that knowledge to real-world success. <span style={{ color: '#2d5a2d', fontWeight: '600' }}>It's education with purpose, mentoring with heart, and preparation for life.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Buttons Section */}
+          <div className="container tuition-action-buttons">
+            <button 
+              className="btn btn-tuition-action"
+              onClick={() => window.open('https://forms.gle/ELUfS3vcmmrE63Vk7', '_blank')}
             >
-              {subject}
+              Sign up for Tutoring Now
             </button>
-          ))}
+            <button 
+              className="btn btn-tuition-action"
+              onClick={() => window.open('mailto:info@muslimcorporateacademy.org', '_blank')}
+            >
+              Send us an Email
+            </button>
+          </div>
         </div>
-        {/* New action buttons below subject tiles */}
-        <div className="container tuition-action-buttons">
-          <button 
-            className="btn btn-tuition-action"
-            onClick={() => window.open('https://forms.gle/ELUfS3vcmmrE63Vk7', '_blank')}
-          >
-            Sign up for Tutoring Now
-          </button>
-          <button 
-            className="btn btn-tuition-action"
-                            onClick={() => window.open('mailto:info@muslimcorporateacademy.org', '_blank')}
-          >
-            Send us an Email
-          </button>
-        </div>
-        {/* Section divider for topic change */}
-        <div className="tuition-section-line"></div>
       </section>
     </div>
   );
