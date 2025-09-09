@@ -1,33 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import emailService from '../services/emailService';
+import { blogPosts } from '../data/addBlogs';
 import './Blog.css';
 
 const Blog = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => observer.observe(el));
-
-    return () => {
-      animatedElements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
+  const [selectedCategories, setSelectedCategories] = useState(['all']);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -55,120 +35,194 @@ const Blog = () => {
     }
   };
 
-
-
-  const blogPosts = [
+  // Category definitions
+  const categories = [
     {
-      id: 1,
-      title: 'The Future of Fintech: Islamic Banking Meets Technology',
-      preview: 'Islamic banking and financial technology are converging in exciting ways, creating new opportunities for Muslim professionals and businesses.',
-      date: 'December 15, 2024',
-      author: 'MCA Team',
-      tags: ['Finance', 'Technology'],
-      readTime: '5 min read',
-      image: '/blog-images/fintech-islamic-banking.jpg'
+      id: 'commercial-awareness',
+      name: 'Commercial Awareness',
+      description: 'Understand how current events and global decisions impact the world of work. These posts explain big trends, policies, and business shifts — and how they connect to your future career.'
     },
     {
-      id: 2,
-      title: 'Navigating Corporate Law: A Muslim Perspective',
-      preview: 'Understanding corporate law from an Islamic perspective can help Muslim professionals navigate complex legal environments.',
-      date: 'December 8, 2024',
-      author: 'MCA Team',
-      tags: ['Law', 'Career'],
-      readTime: '7 min read',
-      image: '/blog-images/corporate-law-muslim.jpg'
+      id: 'islamic-values',
+      name: 'Islamic Values',
+      description: 'Explore how Islamic principles shape the way we learn, work, and grow. These posts reflect on concepts like sabr, tawakkul, modesty, and gratitude — grounding your journey in purpose and faith.'
     },
     {
-      id: 3,
-      title: 'Computer Science Ethics: Building Technology with Islamic Values',
-      preview: 'How Islamic ethics can guide the development of technology that benefits humanity.',
-      date: 'December 1, 2024',
-      author: 'MCA Team',
-      tags: ['Computer Science', 'Ethics'],
-      readTime: '6 min read',
-      image: '/blog-images/cs-ethics-islamic.jpg'
+      id: 'student-life',
+      name: 'Student Life',
+      description: 'Navigate the ups and downs of college and university life with practical advice on studying, time management, wellness, and more — helping you make the most of your student years, inside and outside the lecture hall.'
     },
     {
-      id: 4,
-      title: 'Investment Banking: Understanding the Markets',
-      preview: 'A comprehensive guide to understanding investment banking from an Islamic finance perspective.',
-      date: 'November 24, 2024',
-      author: 'MCA Team',
-      tags: ['Finance', 'Investment'],
-      readTime: '8 min read',
-      image: '/blog-images/investment-banking-markets.jpg'
-    },
-    {
-      id: 5,
-      title: 'Consulting Careers: From Strategy to Implementation',
-      preview: 'Exploring consulting careers and how Muslim professionals can excel in this field.',
-      date: 'November 17, 2024',
-      author: 'MCA Team',
-      tags: ['Consulting', 'Career'],
-      readTime: '4 min read',
-      image: '/blog-images/consulting-careers.jpg'
-    },
-    {
-      id: 6,
-      title: 'Data Science in the Modern Economy',
-      preview: 'How data science is transforming the modern economy and opportunities for Muslim professionals.',
-      date: 'November 10, 2024',
-      author: 'MCA Team',
-      tags: ['Computer Science', 'Data'],
-      readTime: '9 min read',
-      image: '/blog-images/data-science-economy.jpg'
+      id: 'application-support',
+      name: 'Application Support',
+      description: 'From personal statements to interview prep, these blogs guide you through the full application process — so you can move forward with clarity, confidence, and a solid plan.'
     }
   ];
+
+
+  // Filtering functions
+  const toggleCategory = (categoryId) => {
+    if (categoryId === 'all') {
+      setSelectedCategories(['all']);
+      return;
+    }
+    
+    // If clicking the same category, deselect it and go back to 'all'
+    if (selectedCategories.includes(categoryId)) {
+      setSelectedCategories(['all']);
+    } else {
+      // Select only this category
+      setSelectedCategories([categoryId]);
+    }
+  };
+
+  // Filter blog posts based on selected category
+  const filteredBlogPosts = blogPosts.filter(post => {
+    // If 'all' is selected, show all posts
+    if (selectedCategories.includes('all')) {
+      return true;
+    }
+
+    // Get the selected category
+    const selectedCategory = categories.find(cat => cat.id === selectedCategories[0]);
+    if (!selectedCategory) return false;
+
+    // Show posts that have this category (even if they have other categories too)
+    return post.categories.includes(selectedCategory.name);
+  });
+
+  console.log('Debug - selectedCategories:', selectedCategories);
+  console.log('Debug - filteredBlogPosts length:', filteredBlogPosts.length);
+  console.log('Debug - filteredBlogPosts:', filteredBlogPosts.map(p => ({ id: p.id, title: p.title })));
+
+  // Animation effect - runs after filteredBlogPosts is defined
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Use setTimeout to ensure DOM has updated
+    const timeoutId = setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      console.log('Debug - Found animated elements:', animatedElements.length);
+      animatedElements.forEach(el => {
+        // Remove any existing animate-in class first
+        el.classList.remove('animate-in');
+        observer.observe(el);
+        console.log('Debug - Observing element:', el);
+      });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach(el => observer.unobserve(el));
+    };
+  }, [filteredBlogPosts]); // Add filteredBlogPosts as dependency
 
   return (
     <div className="blog">
       {/* Hero Section */}
       <section className="blog-hero">
         <div className="container">
-          <h1 className="hero-title animate-on-scroll">Corporate Insight with an Islamic Ethos</h1>
+          <h1 className="hero-title animate-on-scroll">Real-World Insight. Faith-Driven Perspective.</h1>
           <p className="hero-subtitle animate-on-scroll">
-          Weekly commercial awareness to support faith-aligned growth and strengthen applications
+          Explore commercial awareness, Islamic values, student life and applications - all in one space.
           </p>
-
         </div>
       </section>
 
-      {/* Blog List */}
-      <section className="blog-list">
+      {/* Intro Section */}
+      <section className="blog-intro">
         <div className="container">
-          <div className="blog-grid">
-            {blogPosts.map((post, index) => (
-              <Link to={`/blog/${post.id}`} key={post.id} className="blog-card-link">
-                <article className="blog-card animate-on-scroll" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="blog-card-header">
-                    <div className="blog-tags">
-                      {post.tags.map(tag => (
-                        <span key={tag} className="blog-tag">{tag}</span>
-                      ))}
-                    </div>
-                                      <div className="blog-meta">
-                    <span className="blog-date">{post.date}</span>
-                    <span className="blog-read-time">{post.readTime}</span>
-                    <span className="blog-author">By {post.author}</span>
-                  </div>
-                  </div>
-                  <div className="blog-card-image">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <h3 className="blog-title">{post.title}</h3>
-                  <p className="blog-preview">{post.preview}</p>
-                  <div className="blog-card-footer">
-                    <span className="read-more">Read More →</span>
-                  </div>
-                </article>
-              </Link>
-            ))}
+          <div className="intro-content animate-on-scroll">
+            <p className="intro-text">
+              The MCA blog is your space to explore the journey of being a Muslim student and a professional in today's world. From staying commercially aware to navigating student life, from integrating Islamic values to choosing the right career path - we're here to break things down in a way that's real, relevant, and rooted in purpose.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="blog-main-content">
+        <div className="container">
+          <div className="blog-layout">
+            {/* Filter Sidebar */}
+            <div className="blog-sidebar">
+              <h3 className="filters-title">Filter by Category</h3>
+              <div className="category-buttons">
+                <button 
+                  className={`category-toggle ${selectedCategories.includes('all') ? 'active' : ''}`}
+                  onClick={() => toggleCategory('all')}
+                >
+                  All
+                </button>
+                {categories.map(category => (
+                  <button 
+                    key={category.id}
+                    className={`category-toggle ${selectedCategories.includes(category.id) ? 'active' : ''}`}
+                    onClick={() => toggleCategory(category.id)}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Blog Content */}
+            <div className="blog-content">
+              {filteredBlogPosts.length === 0 ? (
+                <div className="no-blogs-message">
+                  <h3>Coming Soon!</h3>
+                  <p>We're working on adding more content for this category. Check back soon for new articles!</p>
+                </div>
+              ) : (
+                <div className="blog-grid">
+                  {filteredBlogPosts.map((post, index) => (
+                    <Link to={`/blog/${post.id}`} key={post.id} className="blog-card-link">
+                      <article className="blog-card animate-on-scroll" style={{ animationDelay: `${index * 0.1}s` }}>
+                        <div className="blog-card-header">
+                          <div className="blog-tags">
+                            {post.categories.map(category => (
+                              <span key={category} className="blog-tag blog-main-tag">{category}</span>
+                            ))}
+                            {post.topic && <span className="blog-tag blog-sub-tag">{post.topic}</span>}
+                          </div>
+                          <div className="blog-meta">
+                            <span className="blog-date">{post.date}</span>
+                            <span className="blog-read-time">{post.readTime}</span>
+                            <span className="blog-author">By {post.author}</span>
+                          </div>
+                        </div>
+                        <div className="blog-card-image">
+                          <img 
+                            src={post.image} 
+                            alt={post.title}
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                        <h3 className="blog-title">{post.title}</h3>
+                        <p className="blog-preview">{post.preview}</p>
+                        <div className="blog-card-footer">
+                          <span className="read-more">Read More →</span>
+                        </div>
+                      </article>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
