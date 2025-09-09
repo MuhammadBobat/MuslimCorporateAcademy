@@ -195,7 +195,9 @@ const Blog = () => {
                             {post.categories.map(category => (
                               <span key={category} className="blog-tag blog-main-tag">{category}</span>
                             ))}
-                            {post.topic && <span className="blog-tag blog-sub-tag">{post.topic}</span>}
+                            {post.topics && post.topics.map(topic => (
+                              <span key={topic} className="blog-tag blog-sub-tag">{topic}</span>
+                            ))}
                           </div>
                           <div className="blog-meta">
                             <span className="blog-date">{post.date}</span>
