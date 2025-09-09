@@ -577,6 +577,12 @@
 .typing-text,
 .typing-subtitle-text {
   display: inline-block;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  min-height: 1.2em;
 }
 
 .typing-cursor,

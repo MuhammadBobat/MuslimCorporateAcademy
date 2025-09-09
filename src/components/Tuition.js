@@ -76,7 +76,7 @@ const Tuition = () => {
 
   // Career Convos title typing animation
   useEffect(() => {
-    const text = "Here's how we are different… Introducing Career Convos";
+    const text = "Here's How We Are Different… Introducing Career Convos";
     const typingElement = document.getElementById('career-convos-title');
     
     if (!typingElement) return;
@@ -115,7 +115,7 @@ const Tuition = () => {
 
   // Career Convos subtitle typing animation
   useEffect(() => {
-    const text = "Linking your conventional education to real-world success";
+    const text = "Linking Your Conventional Education to Real-World Success";
     const typingElement = document.getElementById('career-convos-subtitle');
     
     if (!typingElement) return;
