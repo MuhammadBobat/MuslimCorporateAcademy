@@ -7,12 +7,23 @@ export const blogPosts = [
     id: 1,
     title: 'Tariffs Are Back - Here’s Why You Should Care',
     preview: 'This blog breaks down Trump’s proposed tariffs, why they matter, and how they could shape global trade and your future career.',
-    date: 'September 9, 2025',
+    date: 'September 2, 2025',
     author: 'Mohamed Jama',
     categories: ['Commercial Awareness'],
     topics: ['Finance', 'Business'],
     readTime: '8 min read',
     image: '/blog-images/tarriffs.jpg'
+  },
+  {
+    id: 2,
+    title: 'Six-Figure Salaries, Infinite Accountability: What NQ Pay Rises Teach Us About Wealth and Sadaqah',
+    preview: 'Exploring NQ lawyer pay rises and how to use wealth responsibly in Islam.',
+    date: 'September 9, 2025',
+    author: 'Mohamed Jama',
+    categories: ['Commercial Awareness', 'Islamic Values'],
+    topics: ['Law', 'Charity'],
+    readTime: '8 min read',
+    image: '/blog-images/blog2.jpg'
   }
 ];
 
