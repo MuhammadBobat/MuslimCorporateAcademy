@@ -102,7 +102,7 @@ const Ethos = () => {
         <div className="ethos-container">
           <h1 className="ethos-page-title animate-on-scroll">Our Islamic Ethos</h1>
           <p className="ethos-page-subtitle animate-on-scroll">
-            Grounding our educational approach in timeless Islamic principles
+          Grounded in Principles. Growing with Purpose.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ const Ethos = () => {
           <div className="values-intro">
             <h2 className="values-title animate-on-scroll">Our Values</h2>
             <p className="values-description animate-on-scroll">
-              Discover the Islamic principles that guide everything we do at MCA
+            At MCA, our ethos is built on timeless Islamic principles. These values form the foundation of success, helping students grow with sincerity, strength, and purpose at every step.
             </p>
           </div>
           

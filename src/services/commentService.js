@@ -72,6 +72,63 @@ const inappropriateWords = [
     'gook',
     'coon'
   ];
+
+// Islamic terms that should be allowed even with caps
+const allowedIslamicTerms = [
+  'subhanallah',
+  'alhamdulillah',
+  'allahuakbar',
+  'bismillah',
+  'inshallah',
+  'mashallah',
+  'astaghfirullah',
+  'laillahaillallah',
+  'allah',
+  'muhammad',
+  'rasulullah',
+  'nabi',
+  'quran',
+  'hadith',
+  'sunnah',
+  'islam',
+  'muslim',
+  'iman',
+  'taqwa',
+  'sabr',
+  'shukr',
+  'tawakkul',
+  'ikhlas',
+  'haya',
+  'ihsan',
+  'ilm',
+  'dua',
+  'dhikr',
+  'salah',
+  'zakat',
+  'hajj',
+  'ramadan',
+  'eid',
+  'jannah',
+  'jahannam',
+  'akhirah',
+  'dunya',
+  'barakah',
+  'fitrah',
+  'halal',
+  'haram',
+  'sadaqah',
+  'zakat',
+  'wudu',
+  'ghusl',
+  'tayammum',
+  'qibla',
+  'kaaba',
+  'masjid',
+  'madinah',
+  'makkah',
+  'jerusalem',
+  'alquds'
+];
   
 
 // Comment moderation function
@@ -84,9 +141,14 @@ export const moderateComment = (text, author) => {
     lowerText.includes(word) || lowerAuthor.includes(word)
   );
   
-  // Check for excessive caps (spam indicator)
+  // Check for Islamic terms (allow these even with caps)
+  const hasIslamicTerms = allowedIslamicTerms.some(term => 
+    lowerText.includes(term) || lowerAuthor.includes(term)
+  );
+  
+  // Check for excessive caps (spam indicator) - but allow if contains Islamic terms
   const capsRatio = (text.match(/[A-Z]/g) || []).length / text.length;
-  const hasExcessiveCaps = capsRatio > 0.7 && text.length > 20;
+  const hasExcessiveCaps = capsRatio > 0.7 && text.length > 20 && !hasIslamicTerms;
   
   // Check for repeated characters (spam indicator)
   const hasRepeatedChars = /(.)\1{4,}/.test(text);

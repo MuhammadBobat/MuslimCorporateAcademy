@@ -97,7 +97,10 @@
 .octagon-logo {
   width: 330px; /* 200px + 65% = 330px */
   height: 330px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   filter: drop-shadow(0 4px 15px rgba(45, 90, 45, 0.3));
 }
@@ -257,6 +260,7 @@
   margin: 0 auto;
   padding: 0 2rem;
 }
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
