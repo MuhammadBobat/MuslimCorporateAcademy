@@ -99,7 +99,7 @@ const Mentors = () => {
                 <div className="mentor-info">
                   <h3>{mentor.name}</h3>
                   <p className="mentor-role">{mentor.role}</p>
-                  <p className="mentor-description">
+                  <p className="mentor-description desktop-only">
                     {mentor.shortDescription}
                   </p>
                 </div>

@@ -5,13 +5,15 @@ import "./Navigation.css";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [currentView, setCurrentView] = useState('main'); // 'main' or 'subpages'
+  const [selectedNavItem, setSelectedNavItem] = useState(null);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (isMenuOpen) {
-      setOpenDropdown(null);
-    }
+    setCurrentView('main');
+    setSelectedNavItem(null);
+    setOpenDropdown(null);
   };
 
   const closeMenu = () => {
@@ -20,16 +22,28 @@ const Navigation = () => {
   };
 
   const toggleDropdown = (index) => {
-    console.log('Toggling dropdown:', index, 'Current open:', openDropdown);
     setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const showSubpages = (navItem, index) => {
+    setSelectedNavItem(navItem);
+    setCurrentView('subpages');
+  };
+
+  const goBackToMain = () => {
+    setCurrentView('main');
+    setSelectedNavItem(null);
   };
 
   const handleClick = (path) => {
     closeMenu();
+    setCurrentView('main');
+    setSelectedNavItem(null);
     if (location.pathname === path) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
 
   const navItems = [
     {
@@ -79,41 +93,72 @@ const Navigation = () => {
         </Link>
 
         <div className={`nav-links ${isMenuOpen ? "nav-links-open" : ""}`}>
-          <Link to="/" className="nav-home-link" onClick={() => handleClick("/")}>
-            Home
-          </Link>
-          {navItems.map((item, index) => (
-            <div key={index} className="nav-item">
-              <div className="nav-link-container" onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleDropdown(index);
-              }}>
+          {/* Desktop Navigation - Hover-based */}
+          <div className="desktop-nav">
+            <Link to="/" className="nav-home-link" onClick={() => handleClick("/")}>
+              Home
+            </Link>
+            {navItems.map((item, index) => (
+              <div key={index} className="nav-item">
                 <span className="nav-link">{item.title}</span>
-                <svg 
-                  className={`dropdown-arrow mobile-only ${openDropdown === index ? "arrow-open" : ""}`}
-                  width="12" 
-                  height="12" 
-                  viewBox="0 0 24 24" 
-                  fill="none"
+                <div className="dropdown-menu">
+                  {item.items.map((subItem, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      to={subItem.path}
+                      className="dropdown-item"
+                      onClick={() => handleClick(subItem.path)}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation - Slide-in system */}
+          <div className={`mobile-nav-content ${currentView === 'subpages' ? 'mobile-nav-content-subpages' : 'mobile-nav-content-main'}`}>
+            
+            {/* Main Navigation View */}
+            <div className={`mobile-nav-main-view ${currentView === 'main' ? 'mobile-nav-view-active' : 'mobile-nav-view-hidden'}`}>
+              <Link to="/" className="mobile-nav-home-link" onClick={() => handleClick("/")}>
+                Home
+              </Link>
+              {navItems.map((item, index) => (
+                <button 
+                  key={index}
+                  className="mobile-nav-main-button"
+                  onClick={() => showSubpages(item, index)}
                 >
-                  <path d="M7 10l5 5 5-5" stroke="#2d5a2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className={`dropdown-menu ${openDropdown === index ? "dropdown-open" : ""}`}>
-                {item.items.map((subItem, subIndex) => (
-                  <Link
-                    key={subIndex}
-                    to={subItem.path}
-                    className="dropdown-item"
-                    onClick={() => handleClick(subItem.path)}
-                  >
-                    {subItem.name}
-                  </Link>
-                ))}
-              </div>
+                  <span>{item.title}</span>
+                  <span className="mobile-nav-arrow">→</span>
+                </button>
+              ))}
             </div>
-          ))}
+
+            {/* Subpages Navigation View */}
+            <div className={`mobile-nav-subpages-view ${currentView === 'subpages' ? 'mobile-nav-view-active' : 'mobile-nav-view-hidden'}`}>
+              <button className="mobile-nav-back-button" onClick={goBackToMain}>
+                <span className="mobile-nav-back-arrow">←</span>
+                <span>Back</span>
+              </button>
+              <div className="mobile-nav-subpages-title">
+                {selectedNavItem?.title}
+              </div>
+              {selectedNavItem?.items.map((subItem, subIndex) => (
+                <Link
+                  key={subIndex}
+                  to={subItem.path}
+                  className="mobile-nav-subpage-link"
+                  onClick={() => handleClick(subItem.path)}
+                >
+                  {subItem.name}
+                </Link>
+              ))}
+            </div>
+
+          </div>
         </div>
 
         <button className="nav-toggle" onClick={toggleMenu}>

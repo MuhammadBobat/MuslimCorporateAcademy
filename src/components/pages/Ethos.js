@@ -125,7 +125,7 @@ const Ethos = () => {
                   alt="MCA Logo" 
                   className="octagon-logo"
                   style={{ 
-                    transform: `rotate(${currentValueIndex * 45}deg)`,
+                    transform: `translate(-50%, -50%) rotate(${currentValueIndex * 45}deg)`,
                     transition: 'transform 1s ease-in-out'
                   }}
                 />
@@ -136,6 +136,7 @@ const Ethos = () => {
                     key={index}
                     className={`value-point ${currentValueIndex === index ? 'active' : ''}`}
                     style={{
+                      '--rotation': `${index * 45}deg`,
                       transform: `rotate(${index * 45}deg) translateY(-198px)`, /* Adjusted for bigger logo */
                       transformOrigin: 'center'
                     }}

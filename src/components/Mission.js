@@ -48,7 +48,7 @@ const Mission = () => {
               </p>
             </div>
             <div className="mission-image">
-              <div className="image-placeholder">Graduation Photo</div>
+              <img src="/graduation.png" alt="Graduation ceremony" />
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const Mission = () => {
           
           <div className="challenges-layout">
             <div className="challenges-image">
-              <div className="image-placeholder">Prayer Photo</div>
+              <img src="/prayer.png" alt="Prayer" />
             </div>
             <div className="challenges-text">
               <h3 className="challenges-heading">But beyond the statistics, the challenges run deeper:</h3>
@@ -160,7 +160,7 @@ const Mission = () => {
                 </svg>
               </div>
               <div className="service-content">
-                <h3 className="service-title">Faith & Spiritual Growth (Coming Soon)</h3>
+                <h3 className="service-title">Faith & Spiritual Growth</h3>
                 <p className="service-description">Stay grounded in your deen while striving for success.</p>
               </div>
             </Link>

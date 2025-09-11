@@ -75,6 +75,16 @@ button {
   .container {
     padding: 0 1rem;
   }
+  
+  /* Fix mobile viewport issues */
+  body {
+    padding-top: 0;
+  }
+  
+  /* Ensure pages start from the correct position */
+  .App {
+    padding-top: 0;
+  }
 }
 
 /* Animation Classes */

@@ -650,6 +650,47 @@
     font-size: 1.1rem;
     line-height: 1.7;
   }
+
+  /* Mobile typing animation styles */
+  .career-convos-header {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    min-height: 80px !important; /* Fixed height to prevent layout shift */
+  }
+
+  .typing-text,
+  .typing-subtitle-text {
+    font-size: 1.125rem !important; /* 25% smaller than 1.5rem */
+    line-height: 1.2 !important;
+    min-height: 1.2em !important;
+    display: inline !important;
+  }
+
+  .career-convos-subtitle {
+    margin-top: 0.2rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .cursor {
+    font-size: 1.125rem !important; /* 25% smaller than 1.5rem */
+    animation: cursor-blink 1s infinite !important;
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  /* Mobile: Reorder second content block to match desktop reading order */
+  .career-convos .mission-content.second-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .career-convos .mission-content.second-block .mission-visual {
+    order: 2; /* Image comes after text */
+  }
+
+  .career-convos .mission-content.second-block .mission-text {
+    order: 1; /* Text comes first */
+  }
 }
   .tutor-slider-tile {
     flex-direction: column;

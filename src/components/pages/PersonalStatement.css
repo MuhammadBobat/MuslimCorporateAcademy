@@ -176,6 +176,8 @@
 @media (max-width: 768px) {
   .ps-hero {
     padding: 4rem 0;
+    margin-top: -70px;
+    padding-top: calc(4rem + 70px);
   }
   
   .hero-title {

@@ -156,10 +156,32 @@ const Blog = () => {
       <section className="blog-main-content">
         <div className="container">
           <div className="blog-layout">
-            {/* Filter Sidebar */}
-            <div className="blog-sidebar">
+            {/* Filter Sidebar - Desktop */}
+            <div className="blog-sidebar desktop-only">
               <h3 className="filters-title">Filter by Category</h3>
               <div className="category-buttons">
+                <button 
+                  className={`category-toggle ${selectedCategories.includes('all') ? 'active' : ''}`}
+                  onClick={() => toggleCategory('all')}
+                >
+                  All
+                </button>
+                {categories.map(category => (
+                  <button 
+                    key={category.id}
+                    className={`category-toggle ${selectedCategories.includes(category.id) ? 'active' : ''}`}
+                    onClick={() => toggleCategory(category.id)}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Filter Section */}
+            <div className="mobile-filter-section mobile-only">
+              <h3 className="filters-title">Filter by Category</h3>
+              <div className="category-buttons-horizontal">
                 <button 
                   className={`category-toggle ${selectedCategories.includes('all') ? 'active' : ''}`}
                   onClick={() => toggleCategory('all')}

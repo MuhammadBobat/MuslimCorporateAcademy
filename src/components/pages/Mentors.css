@@ -323,6 +323,11 @@
   border-left: 4px solid #2d5a2d;
 }
 
+/* Desktop-only class */
+.desktop-only {
+  display: block;
+}
+
 /* Animation classes */
 .animate-on-scroll.animate-in {
   opacity: 1;
@@ -333,7 +338,8 @@
 @media (max-width: 768px) {
   .mentors-hero {
     padding: 3rem 0 6rem 0;
-    padding-top: calc(3rem + 80px);
+    margin-top: -70px;
+    padding-top: calc(3rem + 70px);
   }
   
   .mentors-page-title {
@@ -348,10 +354,60 @@
     padding: 4rem 0;
   }
   
+  /* Hide description on mobile */
+  .desktop-only {
+    display: none;
+  }
+
+  /* Mobile grid: 2 columns, square tiles */
   .mentors-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     max-width: 100%;
+  }
+
+  .mentor-card {
+    padding: 0.8rem;
+    min-height: 0;
+    aspect-ratio: 3/4; /* Makes tiles portrait (longer than wide) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: scale(1.1); /* Make tiles 10% bigger */
+  }
+
+  .mentor-image-placeholder {
+    height: 121px; /* 10% larger square height (110 * 1.1) */
+    width: 121px; /* 10% larger square width (110 * 1.1) */
+    margin: 0 auto 0.3rem auto; /* Center the square image */
+    flex-shrink: 0;
+    border-radius: 18px; /* Proportionally larger rounded edges */
+  }
+
+  .placeholder-text {
+    font-size: 0.6rem;
+  }
+
+  .mentor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    text-align: center;
+    padding-bottom: 0.3rem;
+    min-height: 50px; /* Ensure enough space for text */
+  }
+
+  .mentor-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.1;
+  }
+
+  .mentor-role {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    line-height: 1.1;
   }
   
   .mentors-container {
@@ -364,6 +420,13 @@
   
   .cta-subtitle {
     font-size: 1.1rem;
+  }
+  
+  .mentor-popup {
+    width: 100%;
+    max-width: none;
+    margin: 0.2rem;
+    max-height: 95vh;
   }
   
   .popup-content {
@@ -383,7 +446,18 @@
   .popup-close-button {
     top: 0.5rem;
     right: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ddd;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .popup-close-button:hover {
+    background: #f0f0f0;
+    border-color: #999;
   }
 }
 

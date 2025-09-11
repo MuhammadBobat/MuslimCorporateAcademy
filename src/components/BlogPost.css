@@ -1,3 +1,21 @@
+/* Blog Post Links */
+.blog-post-content a {
+  color: #2d5a2d !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.blog-post-content a:hover {
+  color: #1e3d1e !important;
+  text-decoration: underline !important;
+}
+
+.blog-post-content a:visited {
+  color: #2d5a2d !important;
+  text-decoration: underline !important;
+}
+
 /* Blog Post Hero */
 .blog-post-hero {
   padding: 6rem 0 4rem;

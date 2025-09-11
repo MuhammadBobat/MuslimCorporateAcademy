@@ -81,8 +81,12 @@ const Tuition = () => {
     
     if (!typingElement) return;
 
+    // Clear any existing content
+    typingElement.textContent = '';
+
     let index = 0;
     const typeSpeed = 70; // milliseconds per character
+    let hasStarted = false;
 
     const typeText = () => {
       if (index < text.length) {
@@ -94,12 +98,16 @@ const Tuition = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(typeText, 100); // Start typing sooner when section is visible
+        if (entry.isIntersecting && !hasStarted) {
+          hasStarted = true;
+          setTimeout(typeText, 50); // Start typing immediately when section is visible
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { 
+      threshold: 0.01, // Very low threshold - triggers as soon as any part is visible
+      rootMargin: '0px 0px 0px 0px' // Trigger as soon as section appears at bottom of screen
+    });
 
     const section = document.querySelector('.career-convos');
     if (section) {
@@ -120,8 +128,12 @@ const Tuition = () => {
     
     if (!typingElement) return;
 
+    // Clear any existing content
+    typingElement.textContent = '';
+
     let index = 0;
     const typeSpeed = 55; // slightly faster for subtitle
+    let hasStarted = false;
 
     const typeText = () => {
       if (index < text.length) {
@@ -133,12 +145,16 @@ const Tuition = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(typeText, 1300); // Start subtitle typing sooner
+        if (entry.isIntersecting && !hasStarted) {
+          hasStarted = true;
+          setTimeout(typeText, 1200); // Start subtitle typing sooner
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { 
+      threshold: 0.01, // Very low threshold - triggers as soon as any part is visible
+      rootMargin: '0px 0px 0px 0px' // Trigger as soon as section appears at bottom of screen
+    });
 
     const section = document.querySelector('.career-convos');
     if (section) {
