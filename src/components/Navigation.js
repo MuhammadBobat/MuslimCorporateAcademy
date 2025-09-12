@@ -21,9 +21,6 @@ const Navigation = () => {
     setOpenDropdown(null);
   };
 
-  const toggleDropdown = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
 
   const showSubpages = (navItem, index) => {
     setSelectedNavItem(navItem);

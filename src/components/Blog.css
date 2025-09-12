@@ -1,9 +1,19 @@
 /* Blog Hero */
 .blog-hero {
-  padding: 8rem 0 4rem;
+  padding: 0;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d5a2d 100%);
   color: white;
   text-align: center;
+  position: relative;
+  min-height: 500px;
+}
+
+.blog-hero-overlay {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8rem 0 4rem;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .blog-hero .hero-title {
@@ -450,6 +460,15 @@
     display: block;
   }
 
+  .blog-hero {
+    min-height: 400px;
+  }
+  
+  .blog-hero-overlay {
+    padding: 6rem 0 3rem;
+    min-height: 400px;
+  }
+  
   .blog-hero .hero-title {
     font-size: 2.5rem;
   }
@@ -575,6 +594,15 @@
 }
 
 @media (max-width: 480px) {
+  .blog-hero {
+    min-height: 350px;
+  }
+  
+  .blog-hero-overlay {
+    padding: 5rem 0 2rem;
+    min-height: 350px;
+  }
+  
   .blog-hero .hero-title {
     font-size: 2rem;
   }

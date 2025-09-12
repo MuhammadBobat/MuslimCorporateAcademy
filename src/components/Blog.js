@@ -132,12 +132,22 @@ const Blog = () => {
   return (
     <div className="blog">
       {/* Hero Section */}
-      <section className="blog-hero">
-        <div className="container">
-          <h1 className="hero-title animate-on-scroll">Real-World Insight. Faith-Driven Perspective.</h1>
-          <p className="hero-subtitle animate-on-scroll">
-          Explore commercial awareness, Islamic values, student life and applications - all in one space.
-          </p>
+      <section 
+        className="blog-hero"
+        style={{
+          backgroundImage: `url('/blogbg.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="blog-hero-overlay">
+          <div className="container">
+            <h1 className="hero-title animate-on-scroll">Real-World Insight. Faith-Driven Perspective.</h1>
+            <p className="hero-subtitle animate-on-scroll">
+            Explore commercial awareness, Islamic values, student life and applications - all in one space.
+            </p>
+          </div>
         </div>
       </section>
 
