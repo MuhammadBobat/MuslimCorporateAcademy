@@ -85,7 +85,7 @@ const CVSupport = () => {
               </div>
               <button 
                 className="btn btn-primary"
-                onClick={() => window.open('https://forms.gle/ELUfS3vcmmrE63Vk7', '_blank')}
+                onClick={() => window.open('https://tally.so/r/mKjq08', '_blank')}
               >
                 Book a Session Now
               </button>

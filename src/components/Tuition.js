@@ -171,6 +171,7 @@ const Tuition = () => {
 
 
   const [selected, setSelected] = useState(0);
+  const [showEmbeddedForm, setShowEmbeddedForm] = useState(false);
   const sliderRef = useRef();
 
   return (
@@ -272,10 +273,11 @@ const Tuition = () => {
             <div className="mission-text animate-on-scroll">
               <div className="mission-description">
                 <p>
-                At MCA, we believe tutoring should be more than lesson plans, practice questions, and an hour that ends as quickly as it begins. Our tutors are mentors who build genuine relationships with students, offering guidance that extends far beyond the classroom.
+                Too often, tuition feels like a checklist. Generic lessons, rushed homework, and tutors who don’t really care. At MCA, we prioritise real connection. Our tutors truly care about and support your growth in the classroom and beyond, helping you link your learning to bigger goals.
                 </p>
                 <p>
-                Through <b>Career Convos</b>, every tuition session includes dedicated time to explore your career aspirations. Each student is paired with a mentor who is already pursuing, or has achieved, success in that very field. This means your academic learning is always linked to real-world opportunities and future goals.
+                That’s why we’ve introduced two unique features to make your learning experience more personal, meaningful, and effective: <b>Career Convos</b> and <b>Study Skills Sessions</b>.
+
                 </p>
               </div>
             </div>
@@ -286,40 +288,213 @@ const Tuition = () => {
             </div>
           </div>
 
-          {/* Second Content Block - Image Left, Text Right */}
-          <div className="mission-content second-block">
-            <div className="mission-visual animate-on-scroll">
-              <div className="mission-icon">
-                <img src="/interview.jpeg" alt="Career Convos" className="mission-image" />
-              </div>
-            </div>
-            <div className="mission-text animate-on-scroll">
-              <div className="mission-description">
+          {/* Feature Tiles */}
+          <div className="tuition-feature-tiles">
+            <div 
+              className="tuition-feature-tile animate-on-scroll"
+              style={{
+                backgroundImage: `url('/tuition1.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <div className="tuition-tile-overlay">
+                <h3>Career Convos</h3>
                 <p>
-                Our approach combines rigorous academic support with Islamic principles and personal growth. We don’t just prepare you for exams, we prepare you for the corporate and professional world. By instilling values of excellence, integrity, and purpose, we align your faith with your career ambitions.
+                On top of your regular tutoring, you’ll also get the chance to connect 1:1 with someone already pursuing your dream course, degree, or apprenticeship. Whether that’s Law, Finance, Engineering, or something else. These conversations give you honest advice, a real look at what the journey involves, and clarity on the path ahead.
                 </p>
                 <p>
-                Whether you're aiming for Computer Science, Law, Engineering, Finance, or any other competitive field, <b>Career Convos</b> ensures that every lesson is not just about mastering content, but about connecting that knowledge to real-world success. <span style={{ color: '#2d5a2d', fontWeight: '600' }}>It's education with purpose, mentoring with heart, and preparation for life.</span>
+                  And the best part? It's all included in your lesson fee, so no extra costs, just extra value!
+                </p>
+              </div>
+            </div>
+
+            <div 
+              className="tuition-feature-tile animate-on-scroll"
+              style={{
+                backgroundImage: `url('/tuition2.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            >
+              <div className="tuition-tile-overlay">
+                <h3>Study Skills Sessions</h3>
+                <p>
+                Every few lessons, we pause for a focused Study Skills Session. In just 15-20 minutes, students work with their tutor to reflect on progress and strengthen study habits through <b>faith-guided principles</b>. The sessions also create space to think about future goals, review university course requirements, and map out a personalised path forward. Each check-in leaves students with greater confidence, sustained motivation, and a clear sense of direction.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Action Buttons Section */}
-          <div className="container tuition-action-buttons">
-            <button 
-              className="btn btn-tuition-action"
-              onClick={() => window.open('https://forms.gle/ELUfS3vcmmrE63Vk7', '_blank')}
-            >
-              Sign up for Tutoring Now
-            </button>
-            <button 
-              className="btn btn-tuition-action"
-              onClick={() => window.open('mailto:info@muslimcorporateacademy.org', '_blank')}
-            >
-              Send us an Email
-            </button>
+      {/* Investment Section */}
+      <section className="investment-section">
+        <div className="container">
+          <div className="investment-content">
+            <h2 className="investment-title">So what are you waiting for?</h2>
+            <p className="investment-subtitle">
+              Invest in your academic and personal success. Here's what your <b>£25/hr sessions</b> include:
+            </p>
+            
+            {/* Benefits Carousel */}
+            <div className="benefits-carousel">
+              <div className="benefits-track">
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 8L12 3L22 8L12 13L2 8Z" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
+                      <path d="M6 10V15C6 16.1046 9.13401 17 12 17C14.866 17 18 16.1046 18 15V10" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h4>Personalised Tuition</h4>
+                  <p>Focused, tailored support in your chosen subject with expert tutors who understand your learning style.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12L11 14L15 10" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#2d5a2d" stroke-width="2"/>
+                      <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#2d5a2d" stroke-width="1"/>
+                    </svg>
+                  </div>
+                  <h4>Study Skills Sessions</h4>
+                  <p>Built-in reflection time to track progress, set goals, and develop effective revision strategies.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#2d5a2d" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M8 9H16M8 13H12" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M14 7C14 7.55228 13.5523 8 13 8C12.4477 8 12 7.55228 12 7C12 6.44772 12.4477 6 13 6C13.5523 6 14 6.44772 14 7Z" fill="#2d5a2d"/>
+                    </svg>
+                  </div>
+                  <h4>Career Convos</h4>
+                  <p>Connect directly with professionals in your dream field for real-world insights and career guidance.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="#2d5a2d" stroke-width="2"/>
+                      <path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.6977C21.7033 16.0413 20.9999 15.5714 20.2 15.35" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h4>Ongoing Mentorship</h4>
+                  <p>Our tutors are not just there for lessons. They are a message away whenever you need support or guidance.</p>
+                </div>
+                
+                {/* Duplicate cards for infinite loop */}
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 8L12 3L22 8L12 13L2 8Z" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
+                      <path d="M6 10V15C6 16.1046 9.13401 17 12 17C14.866 17 18 16.1046 18 15V10" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h4>Personalised Tuition</h4>
+                  <p>Focused, tailored support in your chosen subject with expert tutors who understand your learning style.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12L11 14L15 10" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#2d5a2d" stroke-width="2"/>
+                      <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#2d5a2d" stroke-width="1"/>
+                    </svg>
+                  </div>
+                  <h4>Study Skills Sessions</h4>
+                  <p>Built-in reflection time to track progress, set goals, and develop effective revision strategies.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#2d5a2d" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M8 9H16M8 13H12" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M14 7C14 7.55228 13.5523 8 13 8C12.4477 8 12 7.55228 12 7C12 6.44772 12.4477 6 13 6C13.5523 6 14 6.44772 14 7Z" fill="#2d5a2d"/>
+                    </svg>
+                  </div>
+                  <h4>Career Convos</h4>
+                  <p>Connect directly with professionals in your dream field for real-world insights and career guidance.</p>
+                </div>
+                
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="#2d5a2d" stroke-width="2"/>
+                      <path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.6977C21.7033 16.0413 20.9999 15.5714 20.2 15.35" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h4>Ongoing Mentorship</h4>
+                  <p>Our tutors are not just there for lessons. They are a message away whenever you need support or guidance.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="scroll-hint mobile-only">
+              ← Swipe to see more benefits →
+            </div>
+            
+            <div className="charity-note">
+              <p>5% of all proceeds go straight to charity to support ongoing conflicts, like the Genocide in Gaza.</p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Ready Section */}
+      <div className="container ready-section">
+        <h3>Ready to get started?</h3>
+      </div>
+
+      {/* Action Buttons Section */}
+        <div className="container tuition-action-buttons">
+          <button 
+            className="btn btn-tuition-action"
+          onClick={() => setShowEmbeddedForm(!showEmbeddedForm)}
+          >
+            Sign up for Tutoring Now
+          </button>
+          <button 
+            className="btn btn-tuition-action"
+            onClick={() => window.open('mailto:info@muslimcorporateacademy.org', '_blank')}
+          >
+            Send us an Email
+          </button>
+        </div>
+
+          {/* Embedded Form Section */}
+          {showEmbeddedForm && (
+            <div className="embedded-form-container">
+              <div className="embedded-form-header">
+                <h3>MCA Support - Enquiries for Tuition, Interview Prep, Application Support and More</h3>
+                <button 
+                  className="close-form-btn"
+                  onClick={() => setShowEmbeddedForm(false)}
+                >
+                  ×
+                </button>
+              </div>
+              <iframe
+                src="https://tally.so/r/mKjq08"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                title="MCA Support Form"
+                className="embedded-form-iframe"
+              />
+            </div>
+          )}
         </div>
       </section>
     </div>

@@ -344,7 +344,8 @@
   gap: 1.3rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 12rem;
+  margin-top: 13rem;
+  margin-bottom: 4rem;
   padding-bottom: 4rem;
 }
 
@@ -758,4 +759,393 @@
     width: 360px;
     height: 260px;
   }
+}
+
+/* Embedded Form Styles */
+.embedded-form-container {
+  margin-top: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideDown 0.3s ease-out;
+}
+
+.embedded-form-header {
+  background: #2d5a2d;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.embedded-form-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.close-form-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-form-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.embedded-form-iframe {
+  border: none;
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tuition Feature Tiles */
+.tuition-feature-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin: 4rem 0;
+}
+
+.tuition-feature-tile {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.tuition-tile-overlay {
+  background: rgba(248, 249, 250, 0.6);
+  padding: 2.5rem;
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tuition-feature-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tuition-feature-tile h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2d5a2d;
+  margin-bottom: 1rem;
+}
+
+.tuition-feature-tile p {
+  color: #444444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.tuition-feature-tile p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hide mission image on mobile */
+@media (max-width: 768px) {
+  .mission-visual {
+    display: none;
+  }
+  
+  .tuition-feature-tiles {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .tuition-feature-tile {
+    min-height: 350px;
+  }
+  
+  .tuition-tile-overlay {
+    padding: 2rem;
+  }
+  
+  .embedded-form-container {
+    margin-top: 2rem;
+  }
+  
+  .embedded-form-header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .embedded-form-header h3 {
+    font-size: 1rem;
+  }
+  
+  .embedded-form-iframe {
+    height: 500px;
+  }
+}
+
+/* Investment Section */
+.investment-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 0;
+  margin: 3rem 0;
+}
+
+.investment-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.investment-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d5a2d;
+  margin-bottom: 1rem;
+}
+
+.investment-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Benefits Carousel */
+.benefits-carousel {
+  overflow: hidden;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.benefits-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+
+.benefits-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-horizontal 20s linear infinite;
+  width: calc(8 * 280px + 7 * 2rem); /* 8 cards + 7 gaps for infinite loop */
+}
+
+.benefit-card {
+  flex: 0 0 280px;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(45, 90, 45, 0.15);
+  border-color: #2d5a2d;
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.benefit-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d5a2d;
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-4 * 280px - 3 * 2rem)); /* Move by exactly 4 cards to create seamless loop */
+  }
+}
+
+/* Pause animation on hover */
+.benefits-carousel:hover .benefits-track {
+  animation-play-state: paused;
+}
+
+.charity-note {
+  background: rgba(45, 90, 45, 0.1);
+  border-left: 4px solid #2d5a2d;
+  padding: 1.5rem 2rem;
+  margin: 3rem auto;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.charity-note p {
+  color: #2d5a2d;
+  font-weight: 500;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.ready-section {
+  text-align: center;
+  margin: 3rem 0 4rem 0;
+  padding: 0 1rem;
+}
+
+.container.ready-section {
+  margin-bottom: 2.5rem;
+}
+
+.ready-section h3 {
+  font-size: 1.8rem;
+  color: #2d5a2d;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Mobile Investment Section */
+@media (max-width: 768px) {
+  .investment-section {
+    padding: 3rem 0;
+  }
+  
+  .investment-title {
+    font-size: 2rem;
+  }
+  
+  .investment-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .benefits-carousel {
+    overflow: visible;
+    margin: 2rem 0;
+  }
+  
+  .benefits-carousel::after {
+    display: block;
+  }
+  
+  .benefits-track {
+    animation: none;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #2d5a2d #f1f1f1;
+    width: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .benefits-track::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .benefits-track::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  .benefits-track::-webkit-scrollbar-thumb {
+    background: #2d5a2d;
+    border-radius: 3px;
+  }
+  
+  .benefit-card {
+    flex: 0 0 280px;
+    padding: 1.5rem 1rem;
+    scroll-snap-align: start;
+  }
+  
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 0.7rem;
+  }
+  
+  .benefit-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .benefit-card p {
+    font-size: 0.9rem;
+  }
+  
+  .charity-note {
+    padding: 1rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .charity-note p {
+    font-size: 1rem;
+  }
+  
+  .ready-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .scroll-hint {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+/* Desktop - hide scroll hint */
+.scroll-hint {
+  display: none;
 } 

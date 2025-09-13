@@ -34,7 +34,7 @@ const Ethos = () => {
       name: "Shukr",
       arabic: "شكر",
       translation: "Gratitude",
-      description: "We help students recognize and appreciate their opportunities, turning every achievement into gratitude to Allah. Success is a blessing to be thankful for, not taken for granted."
+      description: "We help students recognise and appreciate their opportunities, turning every achievement into gratitude to Allah. Success is a blessing to be thankful for, not taken for granted."
     },
     {
       name: "Taqwa",
