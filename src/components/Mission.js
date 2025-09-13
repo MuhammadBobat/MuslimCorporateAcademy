@@ -26,6 +26,7 @@ const Mission = () => {
     <div className="mission-page">
       {/* Hero Section */}
       <section className="mission-hero-section animate-on-scroll">
+        <div className="mission-hero-bg"></div>
         <div className="container">
           <h1 className="mission-hero-title">Our Mission</h1>
           <p className="mission-hero-subtitle">Empowering students to succeed with faith, knowledge, and purpose.</p>

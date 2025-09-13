@@ -36,7 +36,7 @@ const tutors = [
   },
   {
     subject: 'Psychology',
-    name: 'Muhammad Jama',
+    name: 'Mohamed Jama',
     teaches: 'Psychology',
     studying: 'LLB Law, University of Manchester',
     achieved: 'A* in Psychology (A-levels)',
