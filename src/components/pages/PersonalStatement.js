@@ -60,7 +60,7 @@ const PersonalStatement = () => {
       <section className="ps-hero">
         <div className="ps-hero-bg"></div>
         <div className="ps-container">
-          <h1 className="ps-hero-title animate-on-scroll">Personal Statement Support</h1>
+          <h1 className="ps-hero-title animate-on-scroll">University Application Support</h1>
           <p className="ps-hero-subtitle animate-on-scroll">
             Craft compelling personal statements that showcase your unique journey and Islamic values
           </p>

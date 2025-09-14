@@ -35,8 +35,8 @@ const Footer = () => {
             <h4 className="footer-title">Services</h4>
             <nav className="footer-nav">
               <Link to="/tuition" className="footer-link">Tuition</Link>
-              <Link to="/personal-statement" className="footer-link">Personal Statement Support</Link>
-              <Link to="/cv-support" className="footer-link">CV and Application Support</Link>
+              <Link to="/personal-statement" className="footer-link">University Application Support</Link>
+              <Link to="/cv-support" className="footer-link">Corporate Application Support</Link>
             </nav>
           </div>
           

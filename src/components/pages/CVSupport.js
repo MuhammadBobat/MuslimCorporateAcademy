@@ -63,7 +63,7 @@ const CVSupport = () => {
     <div className="cv-support">
       <section className="cv-hero">
         <div className="container">
-          <h1 className="cv-hero-title animate-on-scroll">CV and Application Support</h1>
+          <h1 className="cv-hero-title animate-on-scroll">Corporate Application Support</h1>
           <p className="cv-hero-subtitle animate-on-scroll">
             Professional guidance for your career applications and development
           </p>
@@ -75,7 +75,7 @@ const CVSupport = () => {
         <div className="container">
           <div className="interview-content">
             <div className="interview-text animate-on-scroll">
-              <h2 className="section-title">Interview and Application Support</h2>
+              <h2 className="section-title">Current Services</h2>
               <h4 className="interview-description">
                 Stand out where it matters most.
               </h4>
@@ -104,7 +104,7 @@ const CVSupport = () => {
                       <line x1="8" y1="15" x2="13" y2="15" stroke="#2d5a2d" strokeWidth="1.5"/>
                     </svg>
                   </div>
-                  <span>Personal Statement Review</span>
+                  <span>Cover Letter Review</span>
                 </div>
                 <div className="interview-feature">
                   <div className="feature-icon">

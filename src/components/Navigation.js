@@ -55,8 +55,8 @@ const Navigation = () => {
       title: "Services",
       items: [
         { name: "Tuition", path: "/tuition" },
-        { name: "Personal Statement Support", path: "/personal-statement" },
-        { name: "CV and Application Support", path: "/cv-support" }
+        { name: "University Application Support", path: "/personal-statement" },
+        { name: "Corporate Application Support", path: "/cv-support" }
       ]
     },
     {
