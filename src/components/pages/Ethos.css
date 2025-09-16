@@ -3,12 +3,15 @@
 }
 
 .ethos-hero {
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url('/public/ethosbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 4rem 0 8rem 0;
   text-align: center;
   margin-top: -80px;
-  padding-top: calc(4rem + 80px);
+  padding-top: calc(6.5rem + 80px);
 }
 
 .ethos-page-title {

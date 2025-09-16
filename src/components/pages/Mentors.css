@@ -141,7 +141,7 @@
 
 .cta-content {
   position: relative;
-  z-index: 3;
+  z-index: 4; /* ensure above overlay */
   max-width: 600px;
   margin: 0 auto;
 }
@@ -153,6 +153,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
+  color: #ffffff !important;
 }
 
 .cta-subtitle {
@@ -162,6 +163,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease 0.2s;
+  color: #ffffff !important;
 }
 
 .cta-button {
@@ -332,6 +334,15 @@
 .animate-on-scroll.animate-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Ensure Mentors CTA is always visible */
+.mentors-cta .cta-content,
+.mentors-cta .cta-title,
+.mentors-cta .cta-subtitle,
+.mentors-cta .cta-button {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Responsive Design */

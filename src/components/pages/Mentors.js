@@ -117,13 +117,13 @@ const Mentors = () => {
         </div>
         <div className="mentors-container">
           <div className="cta-content">
-            <h2 className="cta-title animate-on-scroll">
+            <h2 className="cta-title animate-on-scroll animate-in">
               Want to see your own face here one day?
             </h2>
-            <p className="cta-subtitle animate-on-scroll">
+            <p className="cta-subtitle animate-on-scroll animate-in">
               Join our team of mentors!
             </p>
-            <Link to="/get-involved" className="cta-button animate-on-scroll">
+            <Link to="/get-involved" className="cta-button animate-on-scroll animate-in">
               Get Involved
             </Link>
           </div>

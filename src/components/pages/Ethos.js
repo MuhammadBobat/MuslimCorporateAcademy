@@ -10,49 +10,49 @@ const Ethos = () => {
       name: "Ikhlas",
       arabic: "إخلاص",
       translation: "Sincerity",
-      description: "Every lesson we teach and every interaction we have is done with pure intention. We're not just building careers - we're building character rooted in genuine care for our students' success."
+      description: "Sincerity turns ordinary actions into lasting worship. By purifying intentions, even study and career become ways to serve Allah. Ikhlas helps students see ambition not just as worldly pursuit, but as contribution with purpose and meaning."
     },
     {
       name: "Ilm",
       arabic: "علم",
       translation: "Knowledge",
-      description: "Knowledge is sacred in Islam. We don't just teach subjects - we teach students how to learn, think critically, and use their education to serve their communities and please Allah."
+      description: "“Iqra” was the first command revealed to our Prophet ﷺ, and it remains at the heart of progress. Pursuing Islamic and worldly knowledge with passion and reflection is part of our ethos. MCA empowers students to continue this tradition of excellence that has defined our ummah."
     },
     {
       name: "Tawakkul",
       arabic: "توكل",
       translation: "Trust in Allah",
-      description: "We guide students to work hard while trusting in Allah's plan. Success comes from effort and faith combined - preparing for the future while accepting Allah's wisdom in outcomes."
+      description: "Trust in Allah is the foundation of true success. At MCA, we encourage students to approach every challenge with conviction that Allah is the best of planners, and that He provides a way through every difficulty. This mindset is what drives lasting success in both dunya and akhirah."
     },
     {
       name: "Sabr",
       arabic: "صبر",
       translation: "Patience",
-      description: "Academic and career journeys require patience. We teach students to persevere through challenges, knowing that every struggle is an opportunity to grow closer to Allah."
+      description: "Patience is essential whether you’re waiting on exam results, job opportunities, or personal milestones. Embracing sabr reminds us that Allah’s timing is supreme. This discipline builds resilience, helping our students remain focused in their studies and careers without losing sight of their faith."
     },
     {
       name: "Shukr",
       arabic: "شكر",
       translation: "Gratitude",
-      description: "We help students recognise and appreciate their opportunities, turning every achievement into gratitude to Allah. Success is a blessing to be thankful for, not taken for granted."
+      description: "Gratitude transforms how we see achievement. Recognising Allah’s blessings, even in moments of stress or challenge, gives perspective. MCA fosters this mindset of shukr so students learn that contentment and appreciation are key drivers of both professional and spiritual growth."
     },
     {
       name: "Taqwa",
       arabic: "تقوى",
       translation: "God-Consciousness",
-      description: "Every decision in their career should be made with Allah in mind. We guide students to choose paths that align with Islamic values, ensuring their success serves a higher purpose."
+      description: "Consciousness of Allah is the believer’s compass. It guides us away from what displeases Him and inspires us to pursue what earns His pleasure. With taqwa, our community develops the integrity and discipline needed to succeed as Muslims and leaders."
     },
     {
       name: "Haya",
       arabic: "حياء",
       translation: "Modesty",
-      description: "True confidence comes from modesty and humility. We teach students to be proud of their achievements while remaining humble, knowing that all success comes from Allah."
+      description: "Modesty in speech, conduct, and appearance stems from reverence for Allah, not people’s opinions. Haya elevates dignity and self-respect, empowering students to carry themselves with confidence while staying true to their values."
     },
     {
       name: "Ihsan",
       arabic: "إحسان",
       translation: "Excellence",
-      description: "We encourage students to do their best in everything - not for recognition, but because excellence in our work is a form of worship. Every assignment, every interview, every project done with ihsan."
+      description: "Striving for excellence is central to our ethos. At MCA, we believe every action is an opportunity for ihsan, whether in academia, careers, or personal growth. Ambition and excellence should shape both faith and goals, driving success in this life and the next."
     }
   ];
 
