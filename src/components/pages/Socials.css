@@ -69,6 +69,16 @@
 
 .platform-icon {
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure TikTok glyph is visually centered over text */
+.tiktok-icon {
+  display: block;
+  margin: 0 auto;
+  transform: translateX(8px);
 }
 
 .icon-placeholder {
@@ -123,6 +133,24 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Desktop split layout */
+@media (min-width: 769px) {
+  .socials-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+/* TikTok logo tint to match green styling */
+.tiktok-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) sepia(1) hue-rotate(75deg) saturate(500%) contrast(0.9);
 }
 
 .animate-on-scroll.animate-in {
