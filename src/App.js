@@ -17,7 +17,6 @@ import PersonalStatement from "./components/pages/PersonalStatement";
 import CVSupport from "./components/pages/CVSupport";
 import Socials from "./components/pages/Socials";
 import GetInvolved from "./components/pages/GetInvolved";
-import Enquire from "./components/pages/Enquire";
 import FAQ from "./components/pages/FAQ";
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
             <Route path="/cv-support" element={<CVSupport />} />
             <Route path="/socials" element={<Socials />} />
             <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/enquire" element={<Enquire />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
         </main>

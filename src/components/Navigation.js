@@ -70,7 +70,6 @@ const Navigation = () => {
       title: "Support",
       items: [
         { name: "Get Involved", path: "/get-involved" },
-        { name: "Enquire", path: "/enquire" },
         { name: "FAQ", path: "/faq" }
       ]
     }

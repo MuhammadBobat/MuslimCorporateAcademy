@@ -3,12 +3,15 @@
 }
 
 .involved-hero {
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url('/public/getinvolvedbg.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
   color: white;
-  padding: 4rem 0 8rem 0;
+  padding: 4rem 0rem 8rem 0;
   text-align: center;
-  margin-top: -80px;
-  padding-top: calc(4rem + 80px);
+  margin-top: -60px;
+  padding-top: calc(6rem + 80px);
 }
 
 .involved-hero-title {

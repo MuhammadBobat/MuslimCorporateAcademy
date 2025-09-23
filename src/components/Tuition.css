@@ -29,8 +29,11 @@
 
 /* Tuition Hero */
 .tuition-hero {
-  padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d5a2d 100%);
+  padding: 6rem 0 6rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url('/public/tuitionbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   text-align: center;
 }

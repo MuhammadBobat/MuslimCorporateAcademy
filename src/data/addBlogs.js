@@ -24,6 +24,17 @@ export const blogPosts = [
     topics: ['Law', 'Charity'],
     readTime: '8 min read',
     image: '/blog-images/blog2.jpg'
+  },
+  {
+    id: 3,
+    title: 'Tangible Assets vs Debt Obligations: The Subtle yet Vital role of Sukuk in Shariah-Compliant Transactions',
+    preview: 'This article will explore the role of sukuk, as counterparts to conventional bonds, in the world of Islamic banking and finance.',
+    date: 'September 23, 2025',
+    author: 'Sohayb Nassier',
+    categories: ['Commercial Awareness', 'Islamic Values'],
+    topics: ['Finance', 'Law', 'Business'],
+    readTime: '7 min read',
+    image: '/blog-images/blog3.jpeg'
   }
 ];
 

@@ -283,7 +283,7 @@ const Tuition = () => {
             </div>
             <div className="mission-visual animate-on-scroll">
               <div className="mission-icon">
-                <img src="/mission.jpeg" alt="Career Convos" className="mission-image" />
+                <img src="/tuition3.jpg" alt="Career Convos" className="mission-image" />
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@ const Tuition = () => {
             <div 
               className="tuition-feature-tile animate-on-scroll"
               style={{
-                backgroundImage: `url('/tuition1.jpg')`,
+                backgroundImage: `url('/tuition1.png')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'

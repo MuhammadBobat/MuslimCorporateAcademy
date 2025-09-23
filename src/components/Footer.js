@@ -52,7 +52,6 @@ const Footer = () => {
             <h4 className="footer-title">Support</h4>
             <nav className="footer-nav">
               <Link to="/get-involved" className="footer-link">Get Involved</Link>
-              <Link to="/enquire" className="footer-link">Enquire</Link>
               <Link to="/faq" className="footer-link">FAQ</Link>
             </nav>
           </div>
