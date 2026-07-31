@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-title">Insights</h4>
             <nav className="footer-nav">
-              <Link to="/blog" className="footer-link">Weekly Blog</Link>
+              <Link to="/blog" className="footer-link">Biweekly Blog</Link>
               <Link to="/socials" className="footer-link">Our Socials</Link>
             </nav>
           </div>

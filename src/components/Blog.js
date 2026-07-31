@@ -289,7 +289,7 @@ const Blog = () => {
             </form>
             
             <p style={{marginTop: '1.5rem', color: '#888', fontStyle: 'italic', fontSize: '0.9rem'}}>
-              <small>Your email will be used solely for sending weekly blog updates. You can unsubscribe at any time.</small>
+              <small>Your email will be used solely for sending biweekly blog updates. You can unsubscribe at any time.</small>
             </p>
             
 

@@ -35,6 +35,17 @@ export const blogPosts = [
     topics: ['Finance', 'Law', 'Business'],
     readTime: '7 min read',
     image: '/blog-images/blog3.jpeg'
+  },
+  {
+    id: 4,
+    title: 'The Big Re-Launch: MCA x MML Iftar and What We’ve Been Up To',
+    preview: 'A recap of our sold-out MCA x Manchester Muslim Lawyers iftar, featuring a DLA Piper trainee solicitor and professionals from EY, Amazon and JP Morgan on faith, tawakkul, and breaking into the corporate sector.',
+    date: 'March 15, 2025',
+    author: 'Daanya Isa',
+    categories: ['Commercial Awareness', 'Islamic Values', 'Student Life'],
+    topics: ['Law', 'Business', 'Faith'],
+    readTime: '6 min read',
+    image: '/blog-images/blog4.jpg'
   }
 ];
 

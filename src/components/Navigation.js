@@ -62,7 +62,7 @@ const Navigation = () => {
     {
       title: "Insights",
       items: [
-        { name: "Weekly Blog", path: "/blog" },
+        { name: "Biweekly Blog", path: "/blog" },
         { name: "Our Socials", path: "/socials" }
       ]
     },

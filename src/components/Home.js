@@ -213,7 +213,7 @@ const Home = () => {
                 </svg>
               </div>
               <h3>Commercial Awareness</h3>
-              <p>Weekly blog posts covering industry insights and current affairs.</p>
+              <p>Biweekly blog posts covering industry insights and current affairs.</p>
               <div className="feature-card-footer">
                 <Link to="/blog" className="learn-more">Learn More →</Link>
               </div>

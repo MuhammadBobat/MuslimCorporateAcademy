@@ -2,37 +2,62 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Mentors.css";
 
-// Sample mentor data - this will be replaced with actual data later
 const mentorsData = [
   {
     id: 1,
-    name: "Mentor Name",
-    role: "Professional Role",
-    image: "/mentor1.jpg", // Will be replaced with actual image path
-    shortDescription: "Brief description of expertise and experience.",
-    personalParagraph: "This is where the personal paragraph will go - who they are, their background, what they bring to MCA. This will be filled in later with actual content.",
-    favoriteAyah: "This is where their favorite Qur'anic ayah will go. It will be filled in later with the actual ayah and its meaning.",
-    mcaRole: "This is where their role in MCA will be described - e.g., tutor, blog contributor, advisor. This will be filled in later."
+    name: "Burhan",
+    role: "Co-Founder & Tuition Lead",
+    image: "/burhan.jpg",
+    shortDescription: "Dental student at the University of Manchester, leading MCA's tuition program.",
+    personalParagraph: "Burhan is a dental student at the University of Manchester and one of the co-founders of MCA. Balancing the rigour of a dentistry degree with building an organisation from the ground up, he brings the same discipline and attention to detail to both. Having navigated competitive academic environments himself, he's passionate about helping younger students avoid the pitfalls he had to learn the hard way.",
+    favoriteAyah: {
+      reference: "Surah [Name] ([chapter]:[verse])",
+      arabic: "To be filled in.",
+      translation: "This is where their favorite Qur'anic ayah's translation will go."
+    },
+    mcaRole: "As Tuition Lead, Burhan oversees MCA's 1:1 tutoring program end-to-end - from matching students with the right tutors to ensuring every session delivers real academic progress."
   },
   {
     id: 2,
-    name: "Mentor Name",
-    role: "Professional Role", 
-    image: "/mentor2.jpg", // Will be replaced with actual image path
-    shortDescription: "Brief description of expertise and experience.",
-    personalParagraph: "This is where the personal paragraph will go - who they are, their background, what they bring to MCA. This will be filled in later with actual content.",
-    favoriteAyah: "This is where their favorite Qur'anic ayah will go. It will be filled in later with the actual ayah and its meaning.",
-    mcaRole: "This is where their role in MCA will be described - e.g., tutor, blog contributor, advisor. This will be filled in later."
+    name: "Jama",
+    role: "Co-Founder",
+    image: "/jama.JPG",
+    shortDescription: "Law student at the University of Manchester and the strategic mind behind MCA.",
+    personalParagraph: "Jama studies Law at the University of Manchester and is a co-founder of MCA. Known amongst the team for thinking several steps ahead, he was instrumental in shaping the original vision for MCA and continues to be the one who spots the opportunities others miss. His legal training gives him a sharp eye for structure and long-term thinking, which underpins much of how MCA is run today.",
+    favoriteAyah: {
+      reference: "Surah [Name] ([chapter]:[verse])",
+      arabic: "To be filled in.",
+      translation: "This is where their favorite Qur'anic ayah's translation will go."
+    },
+    mcaRole: "Jama helps shape MCA's overall strategy and direction, working behind the scenes to turn ideas into workable plans for the organisation's future."
   },
   {
     id: 3,
-    name: "Mentor Name",
-    role: "Professional Role",
-    image: "/mentor3.jpg", // Will be replaced with actual image path
-    shortDescription: "Brief description of expertise and experience.",
-    personalParagraph: "This is where the personal paragraph will go - who they are, their background, what they bring to MCA. This will be filled in later with actual content.",
-    favoriteAyah: "This is where their favorite Qur'anic ayah will go. It will be filled in later with the actual ayah and its meaning.",
-    mcaRole: "This is where their role in MCA will be described - e.g., tutor, blog contributor, advisor. This will be filled in later."
+    name: "Muhammad",
+    role: "Co-Founder & Tech Lead",
+    image: "/muhammad.JPG",
+    shortDescription: "Computer Science student at the University of Manchester and MCA's tech lead.",
+    personalParagraph: "Muhammad studies Computer Science at the University of Manchester and is a co-founder of MCA. Beyond his technical role, he's closely involved in shaping MCA's strategy and growth, helping plan the organisation's long-term goals and events. He's driven by the belief that good technology, used with intention, can meaningfully expand who Islamic knowledge and professional guidance can reach.",
+    favoriteAyah: {
+      reference: "Surah Al-Furqan (25:63)",
+      arabic: "وَعِبَادُ الرَّحْمَٰنِ الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا",
+      translation: "\"And the servants of the Most Merciful are those who walk upon the earth in humility, and when the ignorant address them [harshly], they say [words of] peace.\""
+    },
+    mcaRole: "As Tech Lead, Muhammad helps drive MCA's strategy and growth, working with the team to plan long-term goals and events, alongside designing and maintaining MCA's website and digital infrastructure."
+  },
+  {
+    id: 4,
+    name: "Daanya",
+    role: "Lead Sister & Head of Events",
+    image: "/daanya.JPG",
+    shortDescription: "Studies Politics, Philosophy and Economics at the University of Manchester, heading up event planning.",
+    personalParagraph: "Daanya studies Politics, Philosophy and Economics at the University of Manchester and serves as MCA's Lead Sister. Her interdisciplinary background gives her a unique ability to connect ideas across academia, faith, and community life, and she's become a driving force behind MCA's presence beyond the screen. She's passionate about creating spaces where Muslim students, and especially Muslim sisters, feel genuinely supported in both their academic and professional journeys.",
+    favoriteAyah: {
+      reference: "Surah Ad-Duha (93:3-4)",
+      arabic: "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ ۚ وَلَلْآخِرَةُ خَيْرٌ لَّكَ مِنَ الْأُولَىٰ",
+      translation: "\"Your Lord has not forsaken you, nor is He displeased with you — and the hereafter is better for you than the present.\""
+    },
+    mcaRole: "Daanya leads event planning at MCA, organising the workshops, talks and community events that bring MCA's mission to life outside of tuition and online content."
   }
 ];
 
@@ -94,7 +119,7 @@ const Mentors = () => {
                 onClick={() => openMentorPopup(mentor)}
               >
                 <div className="mentor-image-placeholder">
-                  <div className="placeholder-text">Mentor Photo</div>
+                  <img src={mentor.image} alt={mentor.name} className="mentor-photo" />
                 </div>
                 <div className="mentor-info">
                   <h3>{mentor.name}</h3>
@@ -141,7 +166,7 @@ const Mentors = () => {
             <div className="popup-content">
               <div className="popup-image-section">
                 <div className="popup-image-placeholder">
-                  <div className="placeholder-text">Mentor Photo</div>
+                  <img src={selectedMentor.image} alt={selectedMentor.name} className="mentor-photo" />
                 </div>
               </div>
               
@@ -156,7 +181,11 @@ const Mentors = () => {
                 
                 <div className="popup-section">
                   <h3>Favorite Qur'anic Ayah</h3>
-                  <p className="ayah-text">{selectedMentor.favoriteAyah}</p>
+                  <div className="ayah-text">
+                    <p className="ayah-reference">{selectedMentor.favoriteAyah.reference}</p>
+                    <p className="ayah-arabic">{selectedMentor.favoriteAyah.arabic}</p>
+                    <p className="ayah-translation">{selectedMentor.favoriteAyah.translation}</p>
+                  </div>
                 </div>
                 
                 <div className="popup-section">

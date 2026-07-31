@@ -149,7 +149,7 @@ const Mission = () => {
                 </svg>
               </div>
               <div className="service-content">
-                <h3 className="service-title">Weekly Blogs</h3>
+                <h3 className="service-title">Biweekly Blogs</h3>
                 <p className="service-description">Faith-based takes on education, student life, and career insights.</p>
               </div>
             </Link>
@@ -168,7 +168,7 @@ const Mission = () => {
           </div>
           
           <p className="services-description">
-            Through our weekly blogs, we share career insights and reflections on current affairs from an Islamic lens. Our tailored tuition services support students in excelling academically and developing practical skills. But more than that, we aim to inspire the next generation of Muslim professionals. Confident in their faith, equipped with relevant knowledge, and ready to lead.
+            Through our biweekly blogs, we share career insights and reflections on current affairs from an Islamic lens. Our tailored tuition services support students in excelling academically and developing practical skills. But more than that, we aim to inspire the next generation of Muslim professionals. Confident in their faith, equipped with relevant knowledge, and ready to lead.
           </p>
           
           <p className="mission-conclusion">
