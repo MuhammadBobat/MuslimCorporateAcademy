@@ -48,13 +48,14 @@ const CVSupport = () => {
       { threshold: 0.3 }
     );
 
-    if (timelineRef.current) {
-      timelineObserver.observe(timelineRef.current);
+    const timelineNode = timelineRef.current;
+    if (timelineNode) {
+      timelineObserver.observe(timelineNode);
     }
 
     return () => {
-      if (timelineRef.current) {
-        timelineObserver.unobserve(timelineRef.current);
+      if (timelineNode) {
+        timelineObserver.unobserve(timelineNode);
       }
     };
   }, []);

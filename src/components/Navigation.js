@@ -4,7 +4,6 @@ import "./Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
   const [currentView, setCurrentView] = useState('main'); // 'main' or 'subpages'
   const [selectedNavItem, setSelectedNavItem] = useState(null);
   const location = useLocation();
@@ -13,12 +12,10 @@ const Navigation = () => {
     setIsMenuOpen(!isMenuOpen);
     setCurrentView('main');
     setSelectedNavItem(null);
-    setOpenDropdown(null);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    setOpenDropdown(null);
   };
 
 

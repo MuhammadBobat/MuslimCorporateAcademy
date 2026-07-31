@@ -83,8 +83,7 @@ const Home = () => {
           {words.map((word, wordIndex) => {
             const wordStartChar = currentCharCount;
             const wordEndChar = currentCharCount + word.length;
-            const isWordVisible = wordEndChar <= fillCount;
-            
+
             const wordChars = word.split('').map((char, charIndex) => {
               const globalCharIndex = wordStartChar + charIndex;
               const isCharVisible = globalCharIndex < fillCount;

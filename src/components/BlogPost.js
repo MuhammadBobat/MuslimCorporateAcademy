@@ -83,7 +83,7 @@ const blogContent = {
     tags: ['Law', 'Charity'],
     image: '/blog-images/blog2.jpg',
     content: `
-      <h1>The Pay War: What\'s Going On?</h1>
+      <h1>The Pay War: What's Going On?</h1>
       <p>If you've been following industry updates, you may have come across the term "pay war." This refers to the growing competition between top law firms to offer the highest starting salaries to junior lawyers. These roles, known as Newly Qualified (NQ) positions, are the first full-time jobs for law graduates who have just completed their two-year training contracts.</p>
       
       <p>At the moment, those salaries are climbing rapidly. Some U.S. firms operating in London are <a href="https://www.legalcheek.com/the-firms-most-list/?metakey=_cmb_newly_qualified_salary" target="_blank" rel="noopener noreferrer">offering NQs over £150,000</a> to start. In response, even more traditional <a href="https://www.legalcheek.com/2025/05/slaughter-and-may-keeps-nq-pay-at-150k/" target="_blank" rel="noopener noreferrer">UK-based firms have increased their figures</a>. These include the Magic Circle, a group of five elite law firms known for their global presence and high-end work, such as Clifford Chance and Linklaters.</p>
