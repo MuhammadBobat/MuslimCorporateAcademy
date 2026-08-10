@@ -17,10 +17,11 @@
 .socials-hero-title {
   font-size: 3rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .socials-hero-subtitle {
@@ -118,6 +119,12 @@
 
 .tiktok-container {
   max-width: 600px;
+  margin: 0 auto;
+}
+
+.tiktok-embed {
+  max-width: 605px;
+  min-width: 325px;
   margin: 0 auto;
 }
 

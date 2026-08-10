@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useMotionValue, animate, useDragControls } from "motion/react";
 import "./Mentors.css";
 
 const mentorsData = [
@@ -20,7 +21,7 @@ const mentorsData = [
   {
     id: 2,
     name: "Jama",
-    role: "Co-Founder",
+    role: "Co-Founder & Operational Lead",
     image: "/jama.JPG",
     shortDescription: "Law student at the University of Manchester and the strategic mind behind MCA.",
     personalParagraph: "Jama studies Law at the University of Manchester and is a co-founder of MCA. Known amongst the team for thinking several steps ahead, he was instrumental in shaping the original vision for MCA and continues to be the one who spots the opportunities others miss. His legal training gives him a sharp eye for structure and long-term thinking, which underpins much of how MCA is run today.",
@@ -63,6 +64,8 @@ const mentorsData = [
 
 const Mentors = () => {
   const [selectedMentor, setSelectedMentor] = useState(null);
+  const y = useMotionValue(0);
+  const dragControls = useDragControls();
 
   useEffect(() => {
     const observerOptions = {
@@ -87,13 +90,57 @@ const Mentors = () => {
   }, []);
 
   const openMentorPopup = (mentor) => {
+    // Start below the viewport so the entrance animation has somewhere to travel from.
+    y.set(typeof window !== 'undefined' ? window.innerHeight : 800);
     setSelectedMentor(mentor);
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   };
 
-  const closeMentorPopup = () => {
-    setSelectedMentor(null);
-    document.body.style.overflow = 'unset'; // Restore scrolling
+  useEffect(() => {
+    if (selectedMentor) {
+      animate(y, 0, { type: 'spring', bounce: 0, duration: 0.4 });
+    }
+  }, [selectedMentor, y]);
+
+  // Dismiss and animate off-screen, carrying through any release velocity from a drag
+  // (a tap-to-close has zero velocity, a flung drag keeps its momentum into the exit).
+  const dismissPopup = (releaseVelocity = 0) => {
+    const exitDistance = typeof window !== 'undefined' ? window.innerHeight : 800;
+    animate(y, exitDistance, {
+      type: 'spring',
+      velocity: releaseVelocity,
+      bounce: 0.15,
+      duration: 0.45,
+      onComplete: () => {
+        setSelectedMentor(null);
+        document.body.style.overflow = 'unset';
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (!selectedMentor) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        dismissPopup(0);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedMentor]);
+
+  const startDrag = (event) => {
+    dragControls.start(event);
+  };
+
+  const handleDragEnd = (event, info) => {
+    const shouldDismiss = info.offset.y > 120 || info.velocity.y > 600;
+    if (shouldDismiss) {
+      dismissPopup(info.velocity.y);
+    } else {
+      animate(y, 0, { type: 'spring', bounce: 0, duration: 0.35 });
+    }
   };
 
   return (
@@ -157,12 +204,25 @@ const Mentors = () => {
 
       {/* Mentor Popup Modal */}
       {selectedMentor && (
-        <div className="mentor-popup-overlay" onClick={closeMentorPopup}>
-          <div className="mentor-popup" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close-button" onClick={closeMentorPopup}>
+        <div className="mentor-popup-overlay" onClick={() => dismissPopup(0)}>
+          <motion.div
+            className="mentor-popup"
+            style={{ y }}
+            drag="y"
+            dragListener={false}
+            dragControls={dragControls}
+            dragConstraints={{ top: 0 }}
+            dragElastic={{ top: 0.15, bottom: 1 }}
+            onDragEnd={handleDragEnd}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="popup-drag-handle" onPointerDown={startDrag} aria-label="Drag down to close">
+              <span className="popup-drag-handle-bar" />
+            </div>
+            <button className="popup-close-button" onClick={() => dismissPopup(0)}>
               ×
             </button>
-            
+
             <div className="popup-content">
               <div className="popup-image-section">
                 <div className="popup-image-placeholder">
@@ -194,7 +254,7 @@ const Mentors = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

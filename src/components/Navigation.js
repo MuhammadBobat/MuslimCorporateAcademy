@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
@@ -6,7 +6,25 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState('main'); // 'main' or 'subpages'
   const [selectedNavItem, setSelectedNavItem] = useState(null);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const location = useLocation();
+  const navRef = useRef(null);
+
+  // Desktop dropdowns rely on CSS :hover for mouse users, but touch/no-hover
+  // devices (touch laptops, some tablets) need an explicit tap-to-open toggle.
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpenDropdownIndex(null);
+      }
+    };
+    document.addEventListener("pointerdown", handleOutsideClick);
+    return () => document.removeEventListener("pointerdown", handleOutsideClick);
+  }, []);
+
+  const toggleDropdown = (index) => {
+    setOpenDropdownIndex(prev => (prev === index ? null : index));
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -73,7 +91,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="navigation">
+    <nav className="navigation" ref={navRef}>
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={() => handleClick("/")}>
           <div className="logo-container">
@@ -93,14 +111,25 @@ const Navigation = () => {
             </Link>
             {navItems.map((item, index) => (
               <div key={index} className="nav-item">
-                <span className="nav-link">{item.title}</span>
-                <div className="dropdown-menu">
+                <span
+                  className="nav-link"
+                  onClick={() => toggleDropdown(index)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={openDropdownIndex === index}
+                >
+                  {item.title}
+                </span>
+                <div className={`dropdown-menu ${openDropdownIndex === index ? "dropdown-menu-open" : ""}`}>
                   {item.items.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       to={subItem.path}
                       className="dropdown-item"
-                      onClick={() => handleClick(subItem.path)}
+                      onClick={() => {
+                        setOpenDropdownIndex(null);
+                        handleClick(subItem.path);
+                      }}
                     >
                       {subItem.name}
                     </Link>

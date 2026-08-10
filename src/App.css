@@ -91,7 +91,7 @@ button {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .animate-on-scroll.animate-in {
@@ -110,4 +110,42 @@ input:focus {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Instant feedback on press - respond on pointer-down, not on release.
+   Applies to anything tappable that doesn't already define its own :active state. */
+button:not(:disabled),
+a,
+.social-platform-card,
+.mentor-card,
+.blog-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled):active,
+a:active {
+  transform: scale(0.97);
+  transition: transform 100ms ease-out;
+}
+
+/* Reduced motion: replace slides/springs/parallax with a short cross-fade,
+   drop overshoot/transform entirely. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-on-scroll {
+    transform: none;
+    transition: opacity 0.2s ease;
+  }
 }

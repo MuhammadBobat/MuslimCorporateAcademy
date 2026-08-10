@@ -181,9 +181,10 @@
   .social-links {
     gap: 0.75rem;
   }
-  
+
+  /* Keep icon glyph compact but hold the tap target at the 44px accessibility minimum */
   .social-link {
-    width: 35px;
-    height: 35px;
+    width: 44px;
+    height: 44px;
   }
-} 
+}

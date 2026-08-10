@@ -50,11 +50,12 @@
   font-size: 2.1rem;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.01em;
   margin-bottom: 3.5rem;
   margin-top: 0;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .hero-subtitle {

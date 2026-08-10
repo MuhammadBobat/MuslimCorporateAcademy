@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Socials.css";
+import { getLatestTikTok } from "../../services/tiktokService";
 
 const Socials = () => {
+  const [latestTikTok, setLatestTikTok] = useState(null);
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -23,6 +26,38 @@ const Socials = () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    getLatestTikTok().then(data => {
+      if (isMounted && data) {
+        setLatestTikTok(data);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!latestTikTok) {
+      return;
+    }
+
+    // Re-run TikTok's embed script whenever the video changes so it picks up the new blockquote.
+    const existingScript = document.getElementById("tiktok-embed-script");
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = document.createElement("script");
+    script.id = "tiktok-embed-script";
+    script.src = "https://www.tiktok.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, [latestTikTok]);
 
   return (
     <div className="socials-page">
@@ -84,18 +119,32 @@ const Socials = () => {
           <div className="socials-right">
             <h2 className="section-title animate-on-scroll">Latest TikTok Content</h2>
             <div className="tiktok-container animate-on-scroll">
-              <video 
-                className="tiktok-video"
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                controls
-              >
-                <source src="/tiktok.MOV" type="video/quicktime" />
-                <source src="/tiktok.MOV" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {latestTikTok ? (
+                <blockquote
+                  className="tiktok-embed"
+                  cite={latestTikTok.shareUrl}
+                  data-video-id={latestTikTok.videoId}
+                >
+                  <section>
+                    <a href={latestTikTok.shareUrl} target="_blank" rel="noopener noreferrer">
+                      View on TikTok
+                    </a>
+                  </section>
+                </blockquote>
+              ) : (
+                <video
+                  className="tiktok-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                >
+                  <source src="/tiktok.MOV" type="video/quicktime" />
+                  <source src="/tiktok.MOV" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
             </div>
           </div>
         </div>

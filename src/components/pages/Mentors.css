@@ -18,10 +18,11 @@
 .mentors-page-title {
   font-size: 3rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .mentors-page-subtitle {
@@ -223,18 +224,21 @@
   overflow-y: auto;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: popupSlideIn 0.3s ease-out;
+  /* Entrance/exit and drag-to-dismiss are driven by the `y` motion value in Mentors.js */
+  touch-action: pan-y;
 }
 
-@keyframes popupSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* Drag handle - only meaningful (and only shown) once the popup becomes a bottom sheet on mobile */
+.popup-drag-handle {
+  display: none;
+}
+
+.popup-drag-handle-bar {
+  display: block;
+  width: 36px;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .popup-close-button {
@@ -468,39 +472,55 @@
     font-size: 1.1rem;
   }
   
+  /* Bottom sheet on mobile: anchor to the bottom edge, round only the top corners,
+     and expose a drag handle so the drag-to-dismiss gesture is discoverable. */
+  .mentor-popup-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
   .mentor-popup {
     width: 100%;
     max-width: none;
-    margin: 0.2rem;
-    max-height: 95vh;
+    margin: 0;
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
   }
-  
+
+  .popup-drag-handle {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 0 0.5rem;
+    cursor: grab;
+    touch-action: none;
+  }
+
   .popup-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
   }
-  
+
   .popup-image-placeholder {
     height: 300px;
   }
-  
+
   .popup-mentor-name {
     font-size: 2rem;
   }
-  
+
   .popup-close-button {
     top: 0.5rem;
     right: 1rem;
     font-size: 2rem;
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid #ddd;
     color: #333;
     font-weight: bold;
   }
-  
+
   .popup-close-button:hover {
     background: #f0f0f0;
     border-color: #999;
