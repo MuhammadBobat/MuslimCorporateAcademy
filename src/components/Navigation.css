@@ -55,13 +55,13 @@
 .logo-text {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-dark);
   letter-spacing: -0.5px;
 }
 
 .logo-subtitle {
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-gray);
   font-weight: 400;
   margin-top: -2px;
 }
@@ -74,7 +74,7 @@
 
 .nav-home-link {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text-dark);
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -86,7 +86,7 @@
 }
 
 .nav-home-link:hover {
-  color: #2d5a2d;
+  color: var(--brand-green);
 }
 
 .nav-home-link:focus {
@@ -100,7 +100,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: #2d5a2d;
+  background: var(--brand-green);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -117,7 +117,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text-dark);
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -130,11 +130,11 @@
 }
 
 .nav-link:hover {
-  color: #2d5a2d;
+  color: var(--brand-green);
 }
 
 .nav-link.active {
-  color: #2d5a2d;
+  color: var(--brand-green);
 }
 
 .nav-link::after {
@@ -144,7 +144,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: #2d5a2d;
+  background: var(--brand-green);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -189,7 +189,7 @@
 .dropdown-item {
   display: block;
   padding: 0.75rem 1.5rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 0.95rem;
@@ -197,8 +197,8 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(45, 90, 45, 0.05);
-  color: #2d5a2d;
+  background: rgba(var(--brand-green-rgb), 0.05);
+  color: var(--brand-green);
 }
 
 .nav-toggle {
@@ -215,7 +215,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: #1a1a1a;
+  background: var(--text-dark);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -226,7 +226,7 @@
   position: absolute;
   width: 24px;
   height: 2px;
-  background: #1a1a1a;
+  background: var(--text-dark);
   transition: all 0.3s ease;
   left: 0;
 }
@@ -351,7 +351,7 @@
     padding: 1rem 2rem;
     text-align: center;
     text-decoration: none;
-    color: #1a1a1a;
+    color: var(--text-dark);
     font-weight: 500;
     font-size: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -359,8 +359,8 @@
   }
 
   .mobile-nav-home-link:hover {
-    background: rgba(45, 90, 45, 0.05);
-    color: #2d5a2d;
+    background: rgba(var(--brand-green-rgb), 0.05);
+    color: var(--brand-green);
   }
 
   .mobile-nav-main-button {
@@ -374,26 +374,26 @@
     justify-content: space-between;
     font-size: 1rem;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--text-dark);
     cursor: pointer;
     text-align: left;
   }
 
   .mobile-nav-main-button:hover {
-    background: rgba(45, 90, 45, 0.05);
-    color: #2d5a2d;
+    background: rgba(var(--brand-green-rgb), 0.05);
+    color: var(--brand-green);
   }
 
   .mobile-nav-arrow {
     font-size: 1.2rem;
-    color: #2d5a2d;
+    color: var(--brand-green);
   }
 
   /* Subpages Navigation Styles */
   .mobile-nav-back-button {
     width: 100%;
     padding: 1rem 2rem;
-    background: #2d5a2d;
+    background: var(--brand-green);
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
@@ -406,7 +406,7 @@
   }
 
   .mobile-nav-back-button:hover {
-    background: #1e3d1e;
+    background: var(--brand-green-dark);
   }
 
   .mobile-nav-back-arrow {
@@ -418,8 +418,8 @@
     text-align: center;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #1a1a1a;
-    background: rgba(45, 90, 45, 0.05);
+    color: var(--text-dark);
+    background: rgba(var(--brand-green-rgb), 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
@@ -428,7 +428,7 @@
     padding: 1rem 2rem;
     text-align: center;
     text-decoration: none;
-    color: #1a1a1a;
+    color: var(--text-dark);
     font-weight: 500;
     font-size: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -436,8 +436,8 @@
   }
 
   .mobile-nav-subpage-link:hover {
-    background: rgba(45, 90, 45, 0.05);
-    color: #2d5a2d;
+    background: rgba(var(--brand-green-rgb), 0.05);
+    color: var(--brand-green);
   }
 
   .nav-toggle {

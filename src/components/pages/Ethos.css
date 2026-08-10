@@ -14,25 +14,7 @@
   padding-top: calc(6.5rem + 80px);
 }
 
-.ethos-page-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.ethos-page-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease 0.2s;
-}
+/* Base title/subtitle styling now lives in shared PageHero.css. */
 
 /* Interactive Values Section */
 .interactive-values {
@@ -52,7 +34,7 @@
 .values-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 1rem;
   line-height: 1.2;
   opacity: 0;
@@ -62,7 +44,7 @@
 
 .values-description {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-gray);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -106,7 +88,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  filter: drop-shadow(0 4px 15px rgba(45, 90, 45, 0.3));
+  filter: drop-shadow(0 4px 15px rgba(var(--brand-green-rgb), 0.3));
 }
 
 /* Clickable Points */
@@ -135,18 +117,18 @@
 .point-dot {
   font-size: 1.2rem; /* 1.2rem + 30% = 1.56rem */
   font-weight: 600;
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-family: 'Arial', sans-serif;
   transition: all 0.3s ease;
 }
 
 .value-point:hover .point-dot {
-  color: #1e3d1e;
+  color: var(--brand-green-dark);
   font-size: 1.69rem; /* 1.3rem + 30% = 1.69rem */
 }
 
 .value-point.active .point-dot {
-  color: #1e3d1e;
+  color: var(--brand-green-dark);
   font-size: 2.08rem; /* 1.6rem + 30% = 2.08rem */
   font-weight: 700;
 }
@@ -163,7 +145,7 @@
   height: 30px;
   border: none;
   background: none;
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -176,7 +158,7 @@
 }
 
 .control-btn:hover {
-  color: #1e3d1e;
+  color: var(--brand-green-dark);
   transform: scale(1.3);
 }
 
@@ -212,13 +194,13 @@
 .value-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .value-arabic {
   font-size: 3rem;
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-family: 'Arial', sans-serif;
@@ -226,7 +208,7 @@
 
 .value-translation {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-gray);
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -236,10 +218,10 @@
   line-height: 1.7;
   color: #555;
   text-align: left;
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 12px;
-  border-left: 4px solid #2d5a2d;
+  border-left: 4px solid var(--brand-green);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -371,7 +353,7 @@
     justify-content: center;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2d5a2d;
+    color: var(--brand-green);
     background: transparent;
     border: none;
     border-radius: 0;
@@ -414,7 +396,7 @@
   margin-top: 4rem;
   text-align: center;
   padding: 3rem 0;
-  background: linear-gradient(rgba(248, 249, 250, 0.4), rgba(248, 249, 250, 0.4)), url('/public/ethos.jpg');
+  background: linear-gradient(rgba(var(--bg-light-rgb), 0.4), rgba(var(--bg-light-rgb), 0.4)), url('/public/ethos.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -432,7 +414,7 @@
 
 .values-footer-text {
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
   line-height: 1.7;
   margin-bottom: 2rem;
   opacity: 1;
@@ -443,7 +425,7 @@
 
 .values-blog-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -451,12 +433,12 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.2);
+  box-shadow: 0 4px 15px rgba(var(--brand-green-rgb), 0.2);
 }
 
 .values-blog-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(45, 90, 45, 0.3);
+  box-shadow: 0 6px 20px rgba(var(--brand-green-rgb), 0.3);
   color: white;
   text-decoration: none;
 }

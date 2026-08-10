@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d5a2d 100%);
+  background: linear-gradient(135deg, var(--text-dark) 0%, var(--brand-green) 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +138,7 @@
 /* Mission Section */
 .mission {
   padding: 8rem 0;
-  background: #fafafa;
+  background: var(--bg-off-white);
 }
 
 .container {
@@ -172,7 +172,7 @@
 .mission-icon {
   width: 400px;
   height: 280px;
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -198,13 +198,13 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .mission-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #666;
+  color: var(--text-gray);
   margin-bottom: 1.5rem;
 }
 
@@ -251,11 +251,11 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .feature-card p {
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -268,14 +268,14 @@
 }
 
 .learn-more {
-  color: #2d5a2d;
+  color: var(--brand-green);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .learn-more:hover {
-  color: #1e3d1e;
+  color: var(--brand-green-dark);
   transform: translateX(5px);
 }
 
@@ -293,12 +293,12 @@
 }
 
 .btn-primary {
-  background: #2d5a2d;
+  background: var(--brand-green);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1e3d1e;
+  background: var(--brand-green-dark);
   transform: translateY(-2px);
 }
 
@@ -310,7 +310,7 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #1a1a1a;
+  color: var(--text-dark);
   transform: translateY(-2px);
 }
 
@@ -343,7 +343,7 @@
 }
 
 .ayah-translation {
-  color: #e0e0e0;
+  color: var(--border-light);
   font-size: 1.1rem;
   margin-top: 0.01rem;
   margin-bottom: 0.8rem;
@@ -362,7 +362,7 @@
 }
 
 .char-filled {
-  color: #fff;
+  color: var(--white);
   transition: color 0.2s;
 }
 .char-unfilled {

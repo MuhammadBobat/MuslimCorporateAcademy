@@ -16,7 +16,8 @@ const checkFirebaseConnection = () => {
   return true;
 };
 
-// Enhanced inappropriate words filter
+// Profanity/slur filter. Identity terms (e.g. "gay", "trans") are deliberately
+// excluded - they are not profanity and should never be auto-rejected.
 const inappropriateWords = [
     'fuck',
     'shit',
@@ -61,16 +62,20 @@ const inappropriateWords = [
     'orgy',
     'anal',
     'fetish',
-    'gay',
-    'lesbian',
-    'trans',
-    'queer',
     'kike',
     'chink',
     'spic',
     'gook',
     'coon'
   ];
+
+// Matches each word as a whole word (optionally with a common suffix like
+// "-s"/"-ing"/"-ed") so e.g. "rape" doesn't false-positive-match inside
+// "grape" or "separate", while still catching "raping"/"fucking"/"bitches".
+const inappropriateWordsPattern = new RegExp(
+  `\\b(${inappropriateWords.join('|')})(s|es|ed|ing|er)?\\b`,
+  'i'
+);
 
 // Islamic terms that should be allowed even with caps
 const allowedIslamicTerms = [
@@ -136,9 +141,8 @@ export const moderateComment = (text, author) => {
   const lowerAuthor = author.toLowerCase();
   
   // Check for inappropriate content
-  const hasInappropriateContent = inappropriateWords.some(word => 
-    lowerText.includes(word) || lowerAuthor.includes(word)
-  );
+  const hasInappropriateContent =
+    inappropriateWordsPattern.test(lowerText) || inappropriateWordsPattern.test(lowerAuthor);
   
   // Check for Islamic terms (allow these even with caps)
   const hasIslamicTerms = allowedIslamicTerms.some(term => 

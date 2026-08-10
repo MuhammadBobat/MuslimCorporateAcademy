@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion, useMotionValue, animate, useDragControls } from "motion/react";
+import PageHero from "../PageHero";
 import "./Mentors.css";
 
 const mentorsData = [
@@ -145,13 +147,22 @@ const Mentors = () => {
 
   return (
     <div className="mentors">
+      <Helmet>
+        <title>Our Mentors | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Meet the mentors guiding MCA students towards academic and corporate success."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="mentors-hero">
         <div className="mentors-container">
-          <h1 className="mentors-page-title animate-on-scroll">Our Mentors</h1>
-          <p className="mentors-page-subtitle animate-on-scroll">
-            Meet the experienced professionals guiding our students towards success
-          </p>
+          <PageHero
+            title="Our Mentors"
+            subtitle="Meet the experienced professionals guiding our students towards success"
+            titleClassName="mentors-page-title"
+            subtitleClassName="mentors-page-subtitle"
+          />
         </div>
       </section>
 

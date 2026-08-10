@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./GetInvolved.css";
 
 const GetInvolved = () => {
@@ -26,12 +28,21 @@ const GetInvolved = () => {
 
   return (
     <div className="get-involved">
+      <Helmet>
+        <title>Get Involved | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Join our mission to empower Muslim students in the corporate world - become a mentor or tutor."
+        />
+      </Helmet>
       <section className="involved-hero">
         <div className="container">
-          <h1 className="involved-hero-title animate-on-scroll">Get Involved</h1>
-          <p className="involved-hero-subtitle animate-on-scroll">
-            Join our mission to empower Muslim students in the corporate world
-          </p>
+          <PageHero
+            title="Get Involved"
+            subtitle="Join our mission to empower Muslim students in the corporate world"
+            titleClassName="involved-hero-title"
+            subtitleClassName="involved-hero-subtitle"
+          />
         </div>
       </section>
 

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./PersonalStatement.css";
 
 const PersonalStatement = () => {
@@ -57,13 +59,22 @@ const PersonalStatement = () => {
 
   return (
     <div className="personal-statement">
+      <Helmet>
+        <title>University Application Support | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Craft compelling personal statements that showcase your unique journey and Islamic values."
+        />
+      </Helmet>
       <section className="ps-hero">
         <div className="ps-hero-bg"></div>
         <div className="ps-container">
-          <h1 className="ps-hero-title animate-on-scroll">University Application Support</h1>
-          <p className="ps-hero-subtitle animate-on-scroll">
-            Craft compelling personal statements that showcase your unique journey and Islamic values
-          </p>
+          <PageHero
+            title="University Application Support"
+            subtitle="Craft compelling personal statements that showcase your unique journey and Islamic values"
+            titleClassName="ps-hero-title"
+            subtitleClassName="ps-hero-subtitle"
+          />
         </div>
       </section>
 

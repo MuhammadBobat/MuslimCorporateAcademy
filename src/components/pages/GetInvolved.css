@@ -14,25 +14,7 @@
   padding-top: calc(6rem + 80px);
 }
 
-.involved-hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.involved-hero-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease 0.2s;
-}
+/* Base title/subtitle styling now lives in shared PageHero.css. */
 
 .involvement-options {
   padding: 6rem 0;
@@ -44,7 +26,7 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 4rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .options-grid {
@@ -54,7 +36,7 @@
 }
 
 .option-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 12px;
   padding: 0;
   transition: all 0.3s ease;
@@ -65,7 +47,7 @@
 }
 
 .option-card-overlay {
-  background: rgba(248, 249, 250, 0.6);
+  background: rgba(var(--bg-light-rgb), 0.6);
   padding: 2.5rem;
   border-radius: 12px;
   height: 100%;
@@ -91,7 +73,7 @@
   height: 80px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.2);
+  box-shadow: 0 4px 15px rgba(var(--brand-green-rgb), 0.2);
 }
 
 .option-icon-svg {
@@ -100,30 +82,30 @@
   border-radius: 12px;
   background: linear-gradient(135deg, #e8f5e8 0%, #d4e6d4 100%);
   padding: 16px;
-  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.2);
+  box-shadow: 0 4px 15px rgba(var(--brand-green-rgb), 0.2);
   transition: all 0.3s ease;
 }
 
 .option-card:hover .option-icon-svg {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(45, 90, 45, 0.3);
+  box-shadow: 0 6px 20px rgba(var(--brand-green-rgb), 0.3);
 }
 
 .option-card h3 {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #2d5a2d;
+  color: var(--brand-green);
   margin-bottom: 1rem;
 }
 
 .option-card p {
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .option-details h4 {
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -134,7 +116,7 @@
 }
 
 .option-details li {
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.6;
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
@@ -143,7 +125,7 @@
 
 .option-details li:before {
   content: "•";
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -181,7 +163,7 @@
 .contact-text h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -196,23 +178,23 @@
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #2d5a2d;
+  border-left: 4px solid var(--brand-green);
 }
 
 .contact-info p {
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .contact-info a {
-  color: #2d5a2d;
+  color: var(--brand-green);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #1e3d1e;
+  color: var(--brand-green-dark);
   text-decoration: underline;
 }
 
@@ -229,11 +211,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #2d5a2d;
+  border: 2px dashed var(--brand-green);
 }
 
 .placeholder-text {
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-size: 1.2rem;
   font-weight: 500;
 }

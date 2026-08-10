@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Mission.css';
 
 const Mission = () => {
@@ -24,6 +25,13 @@ const Mission = () => {
 
   return (
     <div className="mission-page">
+      <Helmet>
+        <title>Our Mission | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Empowering Muslim students to excel academically and professionally while staying grounded in Tawakkul and Qadr."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="mission-hero-section animate-on-scroll">
         <div className="mission-hero-bg"></div>

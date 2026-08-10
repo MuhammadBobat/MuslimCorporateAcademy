@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./Socials.css";
 import { getLatestTikTok } from "../../services/tiktokService";
 
@@ -61,12 +63,21 @@ const Socials = () => {
 
   return (
     <div className="socials-page">
+      <Helmet>
+        <title>Our Social Media | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Follow Muslim Corporate Academy on TikTok, Instagram and LinkedIn for career advice and updates."
+        />
+      </Helmet>
       <section className="socials-hero">
         <div className="socials-container">
-          <h1 className="socials-hero-title animate-on-scroll">Our Social Media</h1>
-          <p className="socials-hero-subtitle animate-on-scroll">
-            Stay connected with us across all platforms for the latest updates and insights
-          </p>
+          <PageHero
+            title="Our Social Media"
+            subtitle="Stay connected with us across all platforms for the latest updates and insights"
+            titleClassName="socials-hero-title"
+            subtitleClassName="socials-hero-subtitle"
+          />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Tuition.css';
 
 const tutors = [
@@ -176,6 +177,13 @@ const Tuition = () => {
 
   return (
     <div className="tuition">
+      <Helmet>
+        <title>Tuition | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="1:1 online GCSE and A-Level tuition from expert tutors at top UK universities, tailored to help you excel academically."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="tuition-hero">
         <div className="container">

@@ -15,29 +15,11 @@
   padding-top: calc(6.5rem + 80px);
 }
 
-.mentors-page-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.mentors-page-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease 0.2s;
-}
+/* Base title/subtitle styling now lives in shared PageHero.css. */
 
 .mentors-content {
   padding: 6rem 0;
-  background: #fafafa;
+  background: var(--bg-off-white);
 }
 
 .mentors-container {
@@ -75,7 +57,7 @@
 .mentor-image-placeholder {
   height: 320px;
   width: 100%;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background: linear-gradient(135deg, #f0f0f0 0%, var(--border-light) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +75,7 @@
 }
 
 .placeholder-text {
-  color: #999;
+  color: var(--text-muted);
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -105,19 +87,19 @@
 .mentor-info h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .mentor-role {
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-weight: 500;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
 
 .mentor-description {
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.6;
 }
 
@@ -125,7 +107,7 @@
 .mentors-cta {
   position: relative;
   padding: 6rem 0;
-  background: #1a1a1a;
+  background: var(--text-dark);
   color: white;
   text-align: center;
   overflow: hidden;
@@ -137,7 +119,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
   opacity: 0.8;
   z-index: 1;
 }
@@ -166,7 +148,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
-  color: #ffffff !important;
+  color: var(--white) !important;
 }
 
 .cta-subtitle {
@@ -176,12 +158,12 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease 0.2s;
-  color: #ffffff !important;
+  color: var(--white) !important;
 }
 
 .cta-button {
   display: inline-block;
-  background: #2d5a2d;
+  background: var(--brand-green);
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 8px;
@@ -195,9 +177,9 @@
 }
 
 .cta-button:hover {
-  background: #1e3d1e;
+  background: var(--brand-green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(45, 90, 45, 0.3);
+  box-shadow: 0 5px 15px rgba(var(--brand-green-rgb), 0.3);
 }
 
 /* Popup Modal */
@@ -248,7 +230,7 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: #666;
+  color: var(--text-gray);
   cursor: pointer;
   z-index: 10;
   width: 40px;
@@ -281,7 +263,7 @@
 .popup-image-placeholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background: linear-gradient(135deg, #f0f0f0 0%, var(--border-light) 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -299,13 +281,13 @@
 .popup-mentor-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .popup-mentor-role {
   font-size: 1.3rem;
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -323,7 +305,7 @@
 .popup-section h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2d5a2d;
+  color: var(--brand-green);
   margin-bottom: 1rem;
 }
 
@@ -334,15 +316,15 @@
 }
 
 .ayah-text {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 1.25rem 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #2d5a2d;
+  border-left: 4px solid var(--brand-green);
 }
 
 .ayah-reference {
   font-weight: 600;
-  color: #2d5a2d;
+  color: var(--brand-green);
   font-size: 0.95rem;
   margin-bottom: 0.75rem !important;
   text-transform: uppercase;
@@ -353,7 +335,7 @@
   direction: rtl;
   font-size: 1.5rem;
   line-height: 2;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin-bottom: 0.75rem !important;
   font-family: "Traditional Arabic", "Scheherazade New", "Amiri", serif;
 }
@@ -523,7 +505,7 @@
 
   .popup-close-button:hover {
     background: #f0f0f0;
-    border-color: #999;
+    border-color: var(--text-muted);
   }
 }
 

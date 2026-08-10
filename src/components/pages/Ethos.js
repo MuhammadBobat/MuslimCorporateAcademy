@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./Ethos.css";
 
 const Ethos = () => {
@@ -98,12 +100,21 @@ const Ethos = () => {
 
   return (
     <div className="ethos">
+      <Helmet>
+        <title>Our Islamic Ethos | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="The Islamic principles - Tawakkul, Qadr, and more - that ground everything MCA does."
+        />
+      </Helmet>
       <section className="ethos-hero">
         <div className="ethos-container">
-          <h1 className="ethos-page-title animate-on-scroll">Our Islamic Ethos</h1>
-          <p className="ethos-page-subtitle animate-on-scroll">
-          Grounded in Principles. Growing with Purpose.
-          </p>
+          <PageHero
+            title="Our Islamic Ethos"
+            subtitle="Grounded in Principles. Growing with Purpose."
+            titleClassName="ethos-page-title"
+            subtitleClassName="ethos-page-subtitle"
+          />
         </div>
       </section>
 

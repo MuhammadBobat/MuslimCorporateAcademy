@@ -1,5 +1,5 @@
 .footer {
-  background: #1a1a1a;
+  background: var(--text-dark);
   color: white;
   padding: 4rem 0 2rem;
   margin-top: auto;
@@ -48,13 +48,13 @@
 
 .footer-logo .logo-subtitle {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-muted);
   font-weight: 400;
   margin-top: 0.3rem;
 }
 
 .footer-description {
-  color: #999;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -73,7 +73,7 @@
 }
 
 .footer-link {
-  color: #999;
+  color: var(--text-muted);
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
@@ -82,7 +82,7 @@
 }
 
 .footer-link:hover {
-  color: #2d5a2d;
+  color: var(--brand-green);
   text-decoration: none;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .footer-text {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -118,12 +118,12 @@
   height: 40px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: #999;
+  color: var(--text-muted);
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  background: #2d5a2d;
+  background: var(--brand-green);
   color: white;
   transform: translateY(-2px);
 }
@@ -147,7 +147,7 @@
 
 
 .footer-copyright {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 

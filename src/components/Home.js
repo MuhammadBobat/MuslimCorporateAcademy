@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 const HERO_TITLE = 'Empowering Students to Pursue Impactful Roles through Islamic Principles';
@@ -131,6 +132,13 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Muslim Corporate Academy | Empowering Muslim Students in the Corporate World</title>
+        <meta
+          name="description"
+          content="MCA helps Muslim students pursue high-earning corporate careers through tuition, application support, and Islamic-grounded mentorship."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="hero" ref={heroRef}>
         <div 

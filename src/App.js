@@ -1,51 +1,61 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import Navigation from "./components/Navigation";
-import Home from "./components/Home";
-import Tuition from "./components/Tuition";
-import Blog from "./components/Blog";
-import BlogPost from "./components/BlogPost";
-import Mission from "./components/Mission";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-// New page imports
-import Mentors from "./components/pages/Mentors";
-import Ethos from "./components/pages/Ethos";
-import PersonalStatement from "./components/pages/PersonalStatement";
-import CVSupport from "./components/pages/CVSupport";
-import Socials from "./components/pages/Socials";
-import GetInvolved from "./components/pages/GetInvolved";
-import FAQ from "./components/pages/FAQ";
+// Route-level code splitting: each page only downloads when a visitor
+// actually navigates to it, instead of shipping every page in one bundle.
+const Home = lazy(() => import("./components/Home"));
+const Tuition = lazy(() => import("./components/Tuition"));
+const Blog = lazy(() => import("./components/Blog"));
+const BlogPost = lazy(() => import("./components/BlogPost"));
+const Mission = lazy(() => import("./components/Mission"));
+const Mentors = lazy(() => import("./components/pages/Mentors"));
+const Ethos = lazy(() => import("./components/pages/Ethos"));
+const PersonalStatement = lazy(() => import("./components/pages/PersonalStatement"));
+const CVSupport = lazy(() => import("./components/pages/CVSupport"));
+const Socials = lazy(() => import("./components/pages/Socials"));
+const GetInvolved = lazy(() => import("./components/pages/GetInvolved"));
+const FAQ = lazy(() => import("./components/pages/FAQ"));
+const NotFound = lazy(() => import("./components/NotFound"));
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="App">
-        <Navigation />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tuition" element={<Tuition />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/mission" element={<Mission />} />
-            
-            {/* New routes */}
-            <Route path="/mentors" element={<Mentors />} />
-            <Route path="/ethos" element={<Ethos />} />
-            <Route path="/personal-statement" element={<PersonalStatement />} />
-            <Route path="/cv-support" element={<CVSupport />} />
-            <Route path="/socials" element={<Socials />} />
-            <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/faq" element={<FAQ />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="App">
+          <Navigation />
+          <main className="main-content">
+            <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/tuition" element={<Tuition />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/mission" element={<Mission />} />
+
+                {/* New routes */}
+                <Route path="/mentors" element={<Mentors />} />
+                <Route path="/ethos" element={<Ethos />} />
+                <Route path="/personal-statement" element={<PersonalStatement />} />
+                <Route path="/cv-support" element={<CVSupport />} />
+                <Route path="/socials" element={<Socials />} />
+                <Route path="/get-involved" element={<GetInvolved />} />
+                <Route path="/faq" element={<FAQ />} />
+
+                {/* Catch-all */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

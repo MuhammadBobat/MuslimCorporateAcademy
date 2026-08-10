@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./CVSupport.css";
 
 const CVSupport = () => {
@@ -62,12 +64,21 @@ const CVSupport = () => {
 
   return (
     <div className="cv-support">
+      <Helmet>
+        <title>Corporate Application Support | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Professional guidance for CVs, mock interviews, and corporate applications."
+        />
+      </Helmet>
       <section className="cv-hero">
         <div className="container">
-          <h1 className="cv-hero-title animate-on-scroll">Corporate Application Support</h1>
-          <p className="cv-hero-subtitle animate-on-scroll">
-            Professional guidance for your career applications and development
-          </p>
+          <PageHero
+            title="Corporate Application Support"
+            subtitle="Professional guidance for your career applications and development"
+            titleClassName="cv-hero-title"
+            subtitleClassName="cv-hero-subtitle"
+          />
         </div>
       </section>
 

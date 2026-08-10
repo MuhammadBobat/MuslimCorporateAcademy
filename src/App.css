@@ -1,3 +1,19 @@
+/* Design tokens - shared values referenced across every page's CSS.
+   Change a color here rather than hunting through every component file. */
+:root {
+  --brand-green: #2d5a2d;
+  --brand-green-rgb: 45, 90, 45;
+  --brand-green-dark: #1e3d1e;
+  --text-dark: #1a1a1a;
+  --text-gray: #666;
+  --text-muted: #999;
+  --bg-off-white: #fafafa;
+  --bg-light: #f8f9fa;
+  --bg-light-rgb: 248, 249, 250;
+  --border-light: #e0e0e0;
+  --white: #ffffff;
+}
+
 /* Global Styles */
 * {
   margin: 0;
@@ -9,8 +25,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #ffffff;
+  color: var(--text-dark);
+  background: var(--white);
 }
 
 .App {
@@ -103,7 +119,7 @@ button {
 button:focus,
 a:focus,
 input:focus {
-  outline: 2px solid #2d5a2d;
+  outline: 2px solid var(--brand-green);
   outline-offset: 2px;
 }
 

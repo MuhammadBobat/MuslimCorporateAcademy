@@ -3,7 +3,7 @@
 }
 
 .cv-hero {
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
   color: white;
   padding: 4rem 0 8rem 0;
   text-align: center;
@@ -11,30 +11,12 @@
   padding-top: calc(4rem + 80px);
 }
 
-.cv-hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.cv-hero-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease 0.2s;
-}
+/* Base title/subtitle styling now lives in shared PageHero.css. */
 
 /* Multi-Week Course Section */
 .cv-course {
   padding: 6rem 0;
-  background: #fafafa;
+  background: var(--bg-off-white);
 }
 
 .course-content {
@@ -46,13 +28,13 @@
 .course-title {
   font-size: 2.3rem;
   font-weight: 700;
-  color: #2d5a2d;
+  color: var(--brand-green);
   margin-bottom: 2rem;
 }
 
 .course-intro {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.6;
   margin-bottom: 4rem;
   max-width: 800px;
@@ -97,7 +79,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(to right, #2d5a2d, #1e3d1e);
+  background: linear-gradient(to right, var(--brand-green), var(--brand-green-dark));
   width: 0%;
   transition: width 4s ease-out;
 }
@@ -112,7 +94,7 @@
   right: 0;
   width: 0;
   height: 0;
-  border-left: 15px solid #1e3d1e;
+  border-left: 15px solid var(--brand-green-dark);
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   transform: translateY(-50%);
@@ -168,14 +150,14 @@
   width: 40px;
   height: 40px;
   background: white;
-  border: 3px solid #2d5a2d;
+  border: 3px solid var(--brand-green);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(45, 90, 45, 0.2);
+  box-shadow: 0 4px 12px rgba(var(--brand-green-rgb), 0.2);
   margin: 0 auto;
   position: relative;
 }
@@ -186,7 +168,7 @@
   left: 50%;
   top: 50%;
   width: 2px;
-  background: #2d5a2d;
+  background: var(--brand-green);
   transform: translateX(-50%);
 }
 
@@ -203,7 +185,7 @@
 .step-number {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #2d5a2d;
+  color: var(--brand-green);
 }
 
 .timeline-stage-name {
@@ -267,7 +249,7 @@
 .timeline-sessions {
   font-size: 0.7rem;
   font-weight: 600;
-  color: #2d5a2d;
+  color: var(--brand-green);
   margin-bottom: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -276,14 +258,14 @@
 .timeline-title {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin: 0;
   line-height: 1.2;
 }
 
 .timeline-description {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-gray);
   line-height: 1.4;
   margin: 0;
 }
@@ -324,8 +306,8 @@
 /* Hover Effects */
 .timeline-item:hover .timeline-dot {
   transform: scale(1.1);
-  border-color: #1e3d1e;
-  box-shadow: 0 6px 20px rgba(45, 90, 45, 0.3);
+  border-color: var(--brand-green-dark);
+  box-shadow: 0 6px 20px rgba(var(--brand-green-rgb), 0.3);
 }
 
 .timeline-item.top:hover .timeline-dot {
@@ -339,7 +321,7 @@
 .coming-soon-badge {
   margin-top: 3rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #2d5a2d 0%, #1e3d1e 100%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
   border-radius: 25px;
   display: inline-block;
 }
@@ -389,7 +371,7 @@
 .interview-icon {
   width: 480px;
   height: 360px;
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -413,7 +395,7 @@
 .interview-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #666;
+  color: var(--text-gray);
   margin-bottom: 1.5rem;
 }
 
@@ -431,7 +413,7 @@
   height: 100%;
   gap: 1.5rem;
   padding: 1rem;
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
@@ -468,7 +450,7 @@
 
 .interview-feature span {
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--text-dark);
 }
 
 .animate-on-scroll.animate-in {
@@ -558,7 +540,7 @@
   .step-number {
     width: 24px;
     height: 24px;
-    background: #2d5a2d;
+    background: var(--brand-green);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -573,19 +555,19 @@
   .timeline-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2d5a2d;
+    color: var(--brand-green);
     margin: 0;
   }
 
   .timeline-sessions {
     font-size: 0.8rem;
-    color: #2d5a2d;
+    color: var(--brand-green);
     margin: 0.5rem 0;
   }
 
   .timeline-description {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-gray);
     line-height: 1.4;
     margin: 0;
   }

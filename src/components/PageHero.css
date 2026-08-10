@@ -1,0 +1,21 @@
+/* Canonical hero title/subtitle styling, shared by every simple page hero.
+   Page-specific responsive overrides live in that page's own CSS file,
+   scoped via the extra class name passed to PageHero. */
+.page-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.page-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}

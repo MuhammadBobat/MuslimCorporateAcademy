@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import emailService from '../services/emailService';
 import { blogPosts } from '../data/addBlogs';
 import './Blog.css';
@@ -131,6 +132,13 @@ const Blog = () => {
 
   return (
     <div className="blog">
+      <Helmet>
+        <title>Biweekly Blog | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Career insights, commercial awareness, and reflections on current affairs from an Islamic perspective, published biweekly."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section 
         className="blog-hero"

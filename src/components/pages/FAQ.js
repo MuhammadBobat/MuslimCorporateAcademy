@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../PageHero";
 import "./FAQ.css";
 
 const FAQ = () => {
@@ -59,12 +61,21 @@ const FAQ = () => {
 
   return (
     <div className="faq">
+      <Helmet>
+        <title>FAQ | Muslim Corporate Academy</title>
+        <meta
+          name="description"
+          content="Answers to common questions about MCA's tuition, application support, and services."
+        />
+      </Helmet>
       <section className="faq-hero">
         <div className="container">
-          <h1 className="faq-hero-title animate-on-scroll">Frequently Asked Questions</h1>
-          <p className="faq-hero-subtitle animate-on-scroll">
-            Find answers to common questions about our services and academy
-          </p>
+          <PageHero
+            title="Frequently Asked Questions"
+            subtitle="Find answers to common questions about our services and academy"
+            titleClassName="faq-hero-title"
+            subtitleClassName="faq-hero-subtitle"
+          />
         </div>
       </section>
 
