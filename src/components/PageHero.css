@@ -1,6 +1,22 @@
 /* Canonical hero title/subtitle styling, shared by every simple page hero.
    Page-specific responsive overrides live in that page's own CSS file,
    scoped via the extra class name passed to PageHero. */
+
+/* Small text wants slightly positive tracking (opposite of the large title
+   below) - gold reads at ~5:1 contrast against the dark hero backgrounds
+   this sits on, but is never used as text on light backgrounds. */
+.page-hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
 .page-hero-title {
   font-size: 3rem;
   font-weight: 700;

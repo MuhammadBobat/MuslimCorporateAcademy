@@ -12,6 +12,20 @@
   --bg-light-rgb: 248, 249, 250;
   --border-light: #e0e0e0;
   --white: #ffffff;
+
+  /* Secondary accent - used decoratively (borders, chips, icons) and as text
+     only on dark backgrounds (fails AA contrast as text on white/light). */
+  --accent-gold: #c9a24d;
+  --accent-gold-rgb: 201, 162, 77;
+  --accent-gold-light: #f3e6c8;
+  --accent-gold-dark: #a8822e;
+
+  /* Blog category accent colors - one per category, used to color-code
+     category chips so cards read as visually distinct by topic. */
+  --category-commercial: var(--brand-green);
+  --category-islamic: var(--accent-gold-dark);
+  --category-student: #3d6b7d;
+  --category-application: #a9552f;
 }
 
 /* Global Styles */

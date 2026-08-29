@@ -38,6 +38,7 @@ const GetInvolved = () => {
       <section className="involved-hero">
         <div className="container">
           <PageHero
+            eyebrow="Support"
             title="Get Involved"
             subtitle="Join our mission to empower Muslim students in the corporate world"
             titleClassName="involved-hero-title"

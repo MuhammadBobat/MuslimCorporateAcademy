@@ -438,7 +438,7 @@
 
 .values-blog-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(var(--brand-green-rgb), 0.3);
+  box-shadow: 0 6px 20px rgba(var(--brand-green-rgb), 0.3), 0 0 0 2px var(--accent-gold);
   color: white;
   text-decoration: none;
 }

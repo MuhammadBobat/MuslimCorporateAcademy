@@ -5,6 +5,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import RouteLoader from "./components/RouteLoader";
 
 // Route-level code splitting: each page only downloads when a visitor
 // actually navigates to it, instead of shipping every page in one bundle.
@@ -30,7 +31,7 @@ function App() {
         <div className="App">
           <Navigation />
           <main className="main-content">
-            <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+            <Suspense fallback={<RouteLoader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/tuition" element={<Tuition />} />

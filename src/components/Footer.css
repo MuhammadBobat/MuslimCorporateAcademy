@@ -126,6 +126,7 @@
   background: var(--brand-green);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--accent-gold);
 }
 
 /* Nudge TikTok glyph to be optically centered within circle */

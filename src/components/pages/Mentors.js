@@ -28,9 +28,9 @@ const mentorsData = [
     shortDescription: "Law student at the University of Manchester and the strategic mind behind MCA.",
     personalParagraph: "Jama studies Law at the University of Manchester and is a co-founder of MCA. Known amongst the team for thinking several steps ahead, he was instrumental in shaping the original vision for MCA and continues to be the one who spots the opportunities others miss. His legal training gives him a sharp eye for structure and long-term thinking, which underpins much of how MCA is run today.",
     favoriteAyah: {
-      reference: "Surah [Name] ([chapter]:[verse])",
-      arabic: "To be filled in.",
-      translation: "This is where their favorite Qur'anic ayah's translation will go."
+      reference: "Surah Al-Imran (3:160)",
+      arabic: "إِن يَنصُرْكُمُ اللَّهُ فَلَا غَالِبَ لَكُمْ ۖ وَإِن يَخْذُلْكُمْ فَمَن ذَا الَّذِي يَنصُرُكُم مِّن بَعْدِهِ ۗ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ",
+      translation: "\"If Allah should aid you, no one can overcome you; but if He should forsake you, who is there that can aid you after Him? And upon Allah let the believers rely.\""
     },
     mcaRole: "Jama helps shape MCA's overall strategy and direction, working behind the scenes to turn ideas into workable plans for the organisation's future."
   },
@@ -158,6 +158,7 @@ const Mentors = () => {
       <section className="mentors-hero">
         <div className="mentors-container">
           <PageHero
+            eyebrow="About"
             title="Our Mentors"
             subtitle="Meet the experienced professionals guiding our students towards success"
             titleClassName="mentors-page-title"

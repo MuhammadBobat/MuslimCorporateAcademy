@@ -395,58 +395,9 @@ const Tuition = () => {
                   <h4>Ongoing Mentorship</h4>
                   <p>Our tutors are not just there for lessons. They are a message away whenever you need support or guidance.</p>
                 </div>
-                
-                {/* Duplicate cards for infinite loop */}
-                <div className="benefit-card">
-                  <div className="benefit-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 8L12 3L22 8L12 13L2 8Z" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                      <path d="M6 10V15C6 16.1046 9.13401 17 12 17C14.866 17 18 16.1046 18 15V10" stroke="#2d5a2d" strokeWidth="2" fill="none"/>
-                    </svg>
-                  </div>
-                  <h4>Personalised Tuition</h4>
-                  <p>Focused, tailored support in your chosen subject with expert tutors who understand your learning style.</p>
-                </div>
-                
-                <div className="benefit-card">
-                  <div className="benefit-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 12L11 14L15 10" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#2d5a2d" stroke-width="2"/>
-                      <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#2d5a2d" stroke-width="1"/>
-                    </svg>
-                  </div>
-                  <h4>Study Skills Sessions</h4>
-                  <p>Built-in reflection time to track progress, set goals, and develop effective revision strategies.</p>
-                </div>
-                
-                <div className="benefit-card">
-                  <div className="benefit-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#2d5a2d" stroke-width="2" stroke-linejoin="round"/>
-                      <path d="M8 9H16M8 13H12" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round"/>
-                      <path d="M14 7C14 7.55228 13.5523 8 13 8C12.4477 8 12 7.55228 12 7C12 6.44772 12.4477 6 13 6C13.5523 6 14 6.44772 14 7Z" fill="#2d5a2d"/>
-                    </svg>
-                  </div>
-                  <h4>Career Convos</h4>
-                  <p>Connect directly with professionals in your dream field for real-world insights and career guidance.</p>
-                </div>
-                
-                <div className="benefit-card">
-                  <div className="benefit-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <circle cx="9" cy="7" r="4" stroke="#2d5a2d" stroke-width="2"/>
-                      <path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.6977C21.7033 16.0413 20.9999 15.5714 20.2 15.35" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#2d5a2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
-                  <h4>Ongoing Mentorship</h4>
-                  <p>Our tutors are not just there for lessons. They are a message away whenever you need support or guidance.</p>
-                </div>
               </div>
             </div>
-            
+
             <div className="scroll-hint mobile-only">
               ← Swipe to see more benefits →
             </div>

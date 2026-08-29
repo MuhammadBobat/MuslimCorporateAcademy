@@ -110,6 +110,7 @@ const Ethos = () => {
       <section className="ethos-hero">
         <div className="ethos-container">
           <PageHero
+            eyebrow="About"
             title="Our Islamic Ethos"
             subtitle="Grounded in Principles. Growing with Purpose."
             titleClassName="ethos-page-title"

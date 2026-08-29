@@ -71,6 +71,7 @@ const FAQ = () => {
       <section className="faq-hero">
         <div className="container">
           <PageHero
+            eyebrow="Support"
             title="Frequently Asked Questions"
             subtitle="Find answers to common questions about our services and academy"
             titleClassName="faq-hero-title"

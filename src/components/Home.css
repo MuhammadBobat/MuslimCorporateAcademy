@@ -238,7 +238,7 @@
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 0 0 2px var(--accent-gold);
 }
 
 .feature-icon {
@@ -300,6 +300,7 @@
 .btn-primary:hover {
   background: var(--brand-green-dark);
   transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--accent-gold);
 }
 
 .btn-secondary {
@@ -312,6 +313,7 @@
   background: white;
   color: var(--text-dark);
   transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--accent-gold);
 }
 
 .ayah-block {

@@ -229,11 +229,15 @@ const Blog = () => {
                 <div className="blog-grid">
                   {filteredBlogPosts.map((post, index) => (
                     <Link to={`/blog/${post.id}`} key={post.id} className="blog-card-link">
-                      <article className="blog-card animate-on-scroll" style={{ animationDelay: `${index * 0.1}s` }}>
+                      <article
+                        className="blog-card animate-on-scroll"
+                        data-category={post.categories[0]}
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
                         <div className="blog-card-header">
                           <div className="blog-tags">
                             {post.categories.map(category => (
-                              <span key={category} className="blog-tag blog-main-tag">{category}</span>
+                              <span key={category} className="blog-tag blog-main-tag" data-category={category}>{category}</span>
                             ))}
                             {post.topics && post.topics.map(topic => (
                               <span key={topic} className="blog-tag blog-sub-tag">{topic}</span>

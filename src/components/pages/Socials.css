@@ -36,11 +36,14 @@
 }
 
 .social-platform-card {
+  position: relative;
   text-align: center;
   padding: 2.5rem 2rem;
   background: var(--bg-light);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
   transform: translateY(30px);
   text-decoration: none;
@@ -48,9 +51,43 @@
   display: block;
 }
 
+/* Platform identity shows as a top accent bar on hover - a brief flash of
+   personality without abandoning the site's own green/gold identity at rest. */
+.social-platform-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.social-platform-card[data-platform="tiktok"]::before {
+  background: linear-gradient(90deg, #25f4ee, #fe2c55);
+}
+
+.social-platform-card[data-platform="instagram"]::before {
+  background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social-platform-card[data-platform="linkedin"]::before {
+  background: #0a66c2;
+}
+
+.social-platform-card:hover::before {
+  transform: scaleX(1);
+}
+
 .social-platform-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 2px var(--accent-gold);
+}
+
+.social-platform-card:active {
+  transform: translateY(-3px) scale(0.99);
 }
 
 .platform-icon {

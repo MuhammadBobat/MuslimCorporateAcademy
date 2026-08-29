@@ -141,8 +141,8 @@
 }
 
 .category-toggle:hover {
-  border-color: var(--brand-green);
-  color: var(--brand-green);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-dark);
 }
 
 .category-toggle.active {
@@ -184,8 +184,8 @@
 }
 
 .subcategory-tag:hover {
-  border-color: var(--brand-green);
-  color: var(--brand-green);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-dark);
 }
 
 .subcategory-tag.active {
@@ -245,8 +245,10 @@
   background: white;
   padding: 0;
   border-radius: 8px;
+  border-left: 4px solid var(--category-commercial);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
   transform: translateY(30px);
   overflow: hidden;
@@ -255,9 +257,25 @@
   height: 100%;
 }
 
+.blog-card[data-category="Islamic Values"] {
+  border-left-color: var(--category-islamic);
+}
+
+.blog-card[data-category="Student Life"] {
+  border-left-color: var(--category-student);
+}
+
+.blog-card[data-category="Application Support"] {
+  border-left-color: var(--category-application);
+}
+
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blog-card:active {
+  transform: translateY(-3px) scale(0.99);
 }
 
 .blog-card-header {
@@ -283,9 +301,21 @@
 }
 
 .blog-main-tag {
-  background: var(--brand-green);
+  background: var(--category-commercial);
   color: white;
   font-weight: 600;
+}
+
+.blog-main-tag[data-category="Islamic Values"] {
+  background: var(--category-islamic);
+}
+
+.blog-main-tag[data-category="Student Life"] {
+  background: var(--category-student);
+}
+
+.blog-main-tag[data-category="Application Support"] {
+  background: var(--category-application);
 }
 
 .blog-sub-tag {

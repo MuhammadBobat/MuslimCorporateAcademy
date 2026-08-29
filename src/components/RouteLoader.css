@@ -1,0 +1,36 @@
+.route-loader {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-loader-mark {
+  color: var(--brand-green);
+  animation: route-loader-spin 1.8s linear infinite;
+}
+
+@keyframes route-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gentler equivalent: no spin, just a slow breathing opacity instead. */
+@media (prefers-reduced-motion: reduce) {
+  .route-loader-mark {
+    animation: route-loader-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes route-loader-pulse {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}

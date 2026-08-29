@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import './PageHero.css';
 import './Mission.css';
 
 const Mission = () => {
@@ -36,6 +37,7 @@ const Mission = () => {
       <section className="mission-hero-section animate-on-scroll">
         <div className="mission-hero-bg"></div>
         <div className="container">
+          <p className="page-hero-eyebrow animate-on-scroll">About</p>
           <h1 className="mission-hero-title">Our Mission</h1>
           <p className="mission-hero-subtitle">Empowering students to succeed with faith, knowledge, and purpose.</p>
         </div>

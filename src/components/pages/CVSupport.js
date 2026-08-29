@@ -74,6 +74,7 @@ const CVSupport = () => {
       <section className="cv-hero">
         <div className="container">
           <PageHero
+            eyebrow="Services"
             title="Corporate Application Support"
             subtitle="Professional guidance for your career applications and development"
             titleClassName="cv-hero-title"

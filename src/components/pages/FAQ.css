@@ -130,6 +130,7 @@
 .contact-btn:hover {
   background: var(--brand-green-dark);
   transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--accent-gold);
 }
 
 .contact-visual {

@@ -70,6 +70,7 @@ const PersonalStatement = () => {
         <div className="ps-hero-bg"></div>
         <div className="ps-container">
           <PageHero
+            eyebrow="Services"
             title="University Application Support"
             subtitle="Craft compelling personal statements that showcase your unique journey and Islamic values"
             titleClassName="ps-hero-title"

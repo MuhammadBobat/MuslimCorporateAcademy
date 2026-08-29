@@ -43,25 +43,35 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   opacity: 0;
   transform: translateY(30px);
   cursor: pointer;
 }
 
 .mentor-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
+.mentor-card:active {
+  transform: translateY(-3px) scale(0.99);
+}
+
+/* A consistent brand-tinted mat around each photo - the four source images
+   have different native backgrounds/styles, so this frame gives the set a
+   unified, deliberate look rather than four raw, mismatched images bleeding
+   edge to edge. */
 .mentor-image-placeholder {
   height: 320px;
   width: 100%;
-  background: linear-gradient(135deg, #f0f0f0 0%, var(--border-light) 100%);
+  padding: 1.1rem;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 30%, rgba(var(--brand-green-rgb), 0.08) 0%, var(--bg-light) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #eee;
   position: relative;
   overflow: hidden;
 }
@@ -72,6 +82,13 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(var(--brand-green-rgb), 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.mentor-card:hover .mentor-photo {
+  box-shadow: 0 0 0 2px var(--accent-gold);
 }
 
 .placeholder-text {
@@ -96,6 +113,19 @@
   font-weight: 500;
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.mentor-role::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--accent-gold);
 }
 
 .mentor-description {
@@ -179,7 +209,7 @@
 .cta-button:hover {
   background: var(--brand-green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(var(--brand-green-rgb), 0.3);
+  box-shadow: 0 5px 15px rgba(var(--brand-green-rgb), 0.3), 0 0 0 2px var(--accent-gold);
 }
 
 /* Popup Modal */
@@ -290,6 +320,19 @@
   color: var(--brand-green);
   font-weight: 600;
   margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.popup-mentor-role::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--accent-gold);
 }
 
 .popup-section {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { addComment, getComments } from '../services/commentService';
+import RouteLoader from './RouteLoader';
 
 import './BlogPost.css';
 
@@ -96,7 +97,7 @@ const BlogPost = () => {
   };
 
   if (postLoading) {
-    return <div style={{ minHeight: '60vh' }} />;
+    return <RouteLoader />;
   }
 
   if (!post) {
